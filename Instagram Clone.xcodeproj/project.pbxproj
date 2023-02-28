@@ -29,6 +29,7 @@
 		079D4FAF29ADAD6B00681C34 /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAE29ADAD6B00681C34 /* MessagesService.swift */; };
 		079D4FB129ADAD9700681C34 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB029ADAD9700681C34 /* ProfileService.swift */; };
 		079D4FB329ADADB000681C34 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* FeedService.swift */; };
+		079D4FB629ADBB3100681C34 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 079D4FB529ADBB3100681C34 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079D4FB629ADBB3100681C34 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,9 @@
 			dependencies = (
 			);
 			name = "Instagram Clone";
+			packageProductDependencies = (
+				079D4FB529ADBB3100681C34 /* GRDB */,
+			);
 			productName = "Instagram Clone";
 			productReference = 079D4F7929AD9EC600681C34 /* Instagram Clone.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +218,9 @@
 				Base,
 			);
 			mainGroup = 079D4F7029AD9EC600681C34;
+			packageReferences = (
+				079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = 079D4F7A29AD9EC600681C34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,6 +467,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		079D4FB529ADBB3100681C34 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 079D4F7129AD9EC600681C34 /* Project object */;
 }
