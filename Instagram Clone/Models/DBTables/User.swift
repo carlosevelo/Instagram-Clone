@@ -11,7 +11,6 @@ class User: Codable {
     var userId: Int
     var username: String
     var name: String
-    var lastName: String
     //var profilePicture:
     var bio: String
 }

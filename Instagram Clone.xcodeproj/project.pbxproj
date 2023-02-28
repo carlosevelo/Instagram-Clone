@@ -16,6 +16,19 @@
 		079D4F9329ADA34E00681C34 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9229ADA34E00681C34 /* Comment.swift */; };
 		079D4F9529ADA3B800681C34 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9429ADA3B800681C34 /* Story.swift */; };
 		079D4F9729ADA43C00681C34 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9629ADA43C00681C34 /* Chat.swift */; };
+		079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9829ADA83800681C34 /* CurrentUser.swift */; };
+		079D4F9C29ADA9D700681C34 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9B29ADA9D700681C34 /* FeedController.swift */; };
+		079D4F9E29ADAA0C00681C34 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9D29ADAA0C00681C34 /* ProfileController.swift */; };
+		079D4FA029ADAA2800681C34 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9F29ADAA2800681C34 /* MessagesController.swift */; };
+		079D4FA229ADAA4A00681C34 /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA129ADAA4A00681C34 /* StoryController.swift */; };
+		079D4FA429ADAAAE00681C34 /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA329ADAAAE00681C34 /* StoryService.swift */; };
+		079D4FA629ADAAFB00681C34 /* IStoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA529ADAAFB00681C34 /* IStoryService.swift */; };
+		079D4FA929ADACB000681C34 /* IMessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA829ADACB000681C34 /* IMessagesService.swift */; };
+		079D4FAB29ADAD3100681C34 /* IProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAA29ADAD3100681C34 /* IProfileService.swift */; };
+		079D4FAD29ADAD4C00681C34 /* IFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAC29ADAD4C00681C34 /* IFeedService.swift */; };
+		079D4FAF29ADAD6B00681C34 /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAE29ADAD6B00681C34 /* MessagesService.swift */; };
+		079D4FB129ADAD9700681C34 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB029ADAD9700681C34 /* ProfileService.swift */; };
+		079D4FB329ADADB000681C34 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* FeedService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +42,19 @@
 		079D4F9229ADA34E00681C34 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		079D4F9429ADA3B800681C34 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		079D4F9629ADA43C00681C34 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		079D4F9829ADA83800681C34 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		079D4F9B29ADA9D700681C34 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		079D4F9D29ADAA0C00681C34 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		079D4F9F29ADAA2800681C34 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		079D4FA129ADAA4A00681C34 /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
+		079D4FA329ADAAAE00681C34 /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
+		079D4FA529ADAAFB00681C34 /* IStoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStoryService.swift; sourceTree = "<group>"; };
+		079D4FA829ADACB000681C34 /* IMessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMessagesService.swift; sourceTree = "<group>"; };
+		079D4FAA29ADAD3100681C34 /* IProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProfileService.swift; sourceTree = "<group>"; };
+		079D4FAC29ADAD4C00681C34 /* IFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFeedService.swift; sourceTree = "<group>"; };
+		079D4FAE29ADAD6B00681C34 /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
+		079D4FB029ADAD9700681C34 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		079D4FB229ADADB000681C34 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +92,6 @@
 				079D4F8B29AD9EE900681C34 /* Views */,
 				079D4F8A29AD9EDD00681C34 /* Controllers */,
 				079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */,
-				079D4F7E29AD9EC600681C34 /* ContentView.swift */,
 				079D4F8029AD9EC700681C34 /* Assets.xcassets */,
 				079D4F8229AD9EC700681C34 /* Preview Content */,
 			);
@@ -84,6 +109,10 @@
 		079D4F8A29AD9EDD00681C34 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				079D4F9B29ADA9D700681C34 /* FeedController.swift */,
+				079D4F9D29ADAA0C00681C34 /* ProfileController.swift */,
+				079D4F9F29ADAA2800681C34 /* MessagesController.swift */,
+				079D4FA129ADAA4A00681C34 /* StoryController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -91,6 +120,7 @@
 		079D4F8B29AD9EE900681C34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				079D4F7E29AD9EC600681C34 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,11 +128,8 @@
 		079D4F8C29AD9EF700681C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				079D4F8E29ADA17800681C34 /* User.swift */,
-				079D4F9029ADA29B00681C34 /* Post.swift */,
-				079D4F9229ADA34E00681C34 /* Comment.swift */,
-				079D4F9429ADA3B800681C34 /* Story.swift */,
-				079D4F9629ADA43C00681C34 /* Chat.swift */,
+				079D4F9A29ADA98500681C34 /* DBTables */,
+				079D4F9829ADA83800681C34 /* CurrentUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,8 +137,36 @@
 		079D4F8D29AD9F1600681C34 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				079D4FA729ADAC5E00681C34 /* Protocols */,
+				079D4FA329ADAAAE00681C34 /* StoryService.swift */,
+				079D4FAE29ADAD6B00681C34 /* MessagesService.swift */,
+				079D4FB029ADAD9700681C34 /* ProfileService.swift */,
+				079D4FB229ADADB000681C34 /* FeedService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		079D4F9A29ADA98500681C34 /* DBTables */ = {
+			isa = PBXGroup;
+			children = (
+				079D4F9229ADA34E00681C34 /* Comment.swift */,
+				079D4F9629ADA43C00681C34 /* Chat.swift */,
+				079D4F9429ADA3B800681C34 /* Story.swift */,
+				079D4F9029ADA29B00681C34 /* Post.swift */,
+				079D4F8E29ADA17800681C34 /* User.swift */,
+			);
+			path = DBTables;
+			sourceTree = "<group>";
+		};
+		079D4FA729ADAC5E00681C34 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				079D4FA529ADAAFB00681C34 /* IStoryService.swift */,
+				079D4FA829ADACB000681C34 /* IMessagesService.swift */,
+				079D4FAA29ADAD3100681C34 /* IProfileService.swift */,
+				079D4FAC29ADAD4C00681C34 /* IFeedService.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,11 +240,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				079D4F9329ADA34E00681C34 /* Comment.swift in Sources */,
+				079D4FA229ADAA4A00681C34 /* StoryController.swift in Sources */,
+				079D4FA929ADACB000681C34 /* IMessagesService.swift in Sources */,
 				079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */,
+				079D4FA629ADAAFB00681C34 /* IStoryService.swift in Sources */,
 				079D4F9729ADA43C00681C34 /* Chat.swift in Sources */,
+				079D4FA029ADAA2800681C34 /* MessagesController.swift in Sources */,
+				079D4FAD29ADAD4C00681C34 /* IFeedService.swift in Sources */,
 				079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */,
+				079D4FB329ADADB000681C34 /* FeedService.swift in Sources */,
 				079D4F8F29ADA17800681C34 /* User.swift in Sources */,
+				079D4F9E29ADAA0C00681C34 /* ProfileController.swift in Sources */,
+				079D4FA429ADAAAE00681C34 /* StoryService.swift in Sources */,
+				079D4FAB29ADAD3100681C34 /* IProfileService.swift in Sources */,
 				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
+				079D4FB129ADAD9700681C34 /* ProfileService.swift in Sources */,
+				079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */,
+				079D4FAF29ADAD6B00681C34 /* MessagesService.swift in Sources */,
+				079D4F9C29ADA9D700681C34 /* FeedController.swift in Sources */,
 				079D4F9529ADA3B800681C34 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
