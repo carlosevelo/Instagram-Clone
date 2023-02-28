@@ -11,6 +11,11 @@
 		079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7E29AD9EC600681C34 /* ContentView.swift */; };
 		079D4F8129AD9EC700681C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D4F8029AD9EC700681C34 /* Assets.xcassets */; };
 		079D4F8429AD9EC700681C34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D4F8329AD9EC700681C34 /* Preview Assets.xcassets */; };
+		079D4F8F29ADA17800681C34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F8E29ADA17800681C34 /* User.swift */; };
+		079D4F9129ADA29B00681C34 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9029ADA29B00681C34 /* Post.swift */; };
+		079D4F9329ADA34E00681C34 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9229ADA34E00681C34 /* Comment.swift */; };
+		079D4F9529ADA3B800681C34 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9429ADA3B800681C34 /* Story.swift */; };
+		079D4F9729ADA43C00681C34 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9629ADA43C00681C34 /* Chat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		079D4F7E29AD9EC600681C34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		079D4F8029AD9EC700681C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		079D4F8329AD9EC700681C34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		079D4F8E29ADA17800681C34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		079D4F9029ADA29B00681C34 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		079D4F9229ADA34E00681C34 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		079D4F9429ADA3B800681C34 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		079D4F9629ADA43C00681C34 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,10 @@
 		079D4F7B29AD9EC600681C34 /* Instagram Clone */ = {
 			isa = PBXGroup;
 			children = (
+				079D4F8D29AD9F1600681C34 /* Services */,
+				079D4F8C29AD9EF700681C34 /* Models */,
+				079D4F8B29AD9EE900681C34 /* Views */,
+				079D4F8A29AD9EDD00681C34 /* Controllers */,
 				079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */,
 				079D4F7E29AD9EC600681C34 /* ContentView.swift */,
 				079D4F8029AD9EC700681C34 /* Assets.xcassets */,
@@ -65,6 +79,39 @@
 				079D4F8329AD9EC700681C34 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		079D4F8A29AD9EDD00681C34 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		079D4F8B29AD9EE900681C34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		079D4F8C29AD9EF700681C34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				079D4F8E29ADA17800681C34 /* User.swift */,
+				079D4F9029ADA29B00681C34 /* Post.swift */,
+				079D4F9229ADA34E00681C34 /* Comment.swift */,
+				079D4F9429ADA3B800681C34 /* Story.swift */,
+				079D4F9629ADA43C00681C34 /* Chat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		079D4F8D29AD9F1600681C34 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				079D4F9329ADA34E00681C34 /* Comment.swift in Sources */,
 				079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */,
+				079D4F9729ADA43C00681C34 /* Chat.swift in Sources */,
 				079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */,
+				079D4F8F29ADA17800681C34 /* User.swift in Sources */,
+				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
+				079D4F9529ADA3B800681C34 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
