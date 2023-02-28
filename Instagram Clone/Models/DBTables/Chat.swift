@@ -38,13 +38,34 @@ struct Chat: TableRecord, FetchableRecord {
     }
 }
 
-struct Message: FetchableRecord {
-    init(row: GRDB.Row) {
-        <#code#>
+struct Message: TableRecord, FetchableRecord {
+    
+    //MARK: - Constants
+    
+    struct Table {
+        static let databaseTableName = "chat"
+        
+        static let messageID = "MessageID"
+        static let chatId = "ChatId"
+        static let userId = "UserId"
+        static let text = "Text"
     }
+    
+    //MARK: - Properties
     
     var messageID: Int
     var chatId: Int
     var userId: Int
     var text: String
+    
+    //MARK: - Initialization
+
+    init(row: GRDB.Row) {
+        messageID = row[Table.messageID]
+        chatId = row[Table.chatId]
+        userId = row[Table.userId]
+        text = row[Table.text]
+    }
+    
+
 }

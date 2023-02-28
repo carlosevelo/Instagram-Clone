@@ -17,19 +17,21 @@
 		079D4F9529ADA3B800681C34 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9429ADA3B800681C34 /* Story.swift */; };
 		079D4F9729ADA43C00681C34 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9629ADA43C00681C34 /* Chat.swift */; };
 		079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9829ADA83800681C34 /* CurrentUser.swift */; };
-		079D4F9C29ADA9D700681C34 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9B29ADA9D700681C34 /* FeedController.swift */; };
-		079D4F9E29ADAA0C00681C34 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9D29ADAA0C00681C34 /* ProfileController.swift */; };
-		079D4FA029ADAA2800681C34 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9F29ADAA2800681C34 /* MessagesController.swift */; };
-		079D4FA229ADAA4A00681C34 /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA129ADAA4A00681C34 /* StoryController.swift */; };
+		079D4F9C29ADA9D700681C34 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9B29ADA9D700681C34 /* FeedViewModel.swift */; };
+		079D4F9E29ADAA0C00681C34 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9D29ADAA0C00681C34 /* ProfileViewModel.swift */; };
+		079D4FA029ADAA2800681C34 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F9F29ADAA2800681C34 /* MessagesViewModel.swift */; };
+		079D4FA229ADAA4A00681C34 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA129ADAA4A00681C34 /* StoryViewModel.swift */; };
 		079D4FA429ADAAAE00681C34 /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA329ADAAAE00681C34 /* StoryService.swift */; };
 		079D4FA629ADAAFB00681C34 /* IStoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA529ADAAFB00681C34 /* IStoryService.swift */; };
-		079D4FA929ADACB000681C34 /* IMessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA829ADACB000681C34 /* IMessagesService.swift */; };
-		079D4FAB29ADAD3100681C34 /* IProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAA29ADAD3100681C34 /* IProfileService.swift */; };
-		079D4FAD29ADAD4C00681C34 /* IFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAC29ADAD4C00681C34 /* IFeedService.swift */; };
-		079D4FAF29ADAD6B00681C34 /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAE29ADAD6B00681C34 /* MessagesService.swift */; };
-		079D4FB129ADAD9700681C34 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB029ADAD9700681C34 /* ProfileService.swift */; };
-		079D4FB329ADADB000681C34 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* FeedService.swift */; };
+		079D4FA929ADACB000681C34 /* IChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FA829ADACB000681C34 /* IChatService.swift */; };
+		079D4FAB29ADAD3100681C34 /* IUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAA29ADAD3100681C34 /* IUserService.swift */; };
+		079D4FAD29ADAD4C00681C34 /* IPostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAC29ADAD4C00681C34 /* IPostService.swift */; };
+		079D4FAF29ADAD6B00681C34 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAE29ADAD6B00681C34 /* ChatService.swift */; };
+		079D4FB129ADAD9700681C34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB029ADAD9700681C34 /* UserService.swift */; };
+		079D4FB329ADADB000681C34 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* PostService.swift */; };
 		079D4FB629ADBB3100681C34 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 079D4FB529ADBB3100681C34 /* GRDB */; };
+		079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB729AE677A00681C34 /* ICommentService.swift */; };
+		079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB929AE67E200681C34 /* CommentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,18 +46,20 @@
 		079D4F9429ADA3B800681C34 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		079D4F9629ADA43C00681C34 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		079D4F9829ADA83800681C34 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		079D4F9B29ADA9D700681C34 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		079D4F9D29ADAA0C00681C34 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		079D4F9F29ADAA2800681C34 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
-		079D4FA129ADAA4A00681C34 /* StoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
+		079D4F9B29ADA9D700681C34 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		079D4F9D29ADAA0C00681C34 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		079D4F9F29ADAA2800681C34 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		079D4FA129ADAA4A00681C34 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		079D4FA329ADAAAE00681C34 /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		079D4FA529ADAAFB00681C34 /* IStoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStoryService.swift; sourceTree = "<group>"; };
-		079D4FA829ADACB000681C34 /* IMessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMessagesService.swift; sourceTree = "<group>"; };
-		079D4FAA29ADAD3100681C34 /* IProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IProfileService.swift; sourceTree = "<group>"; };
-		079D4FAC29ADAD4C00681C34 /* IFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFeedService.swift; sourceTree = "<group>"; };
-		079D4FAE29ADAD6B00681C34 /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
-		079D4FB029ADAD9700681C34 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-		079D4FB229ADADB000681C34 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		079D4FA829ADACB000681C34 /* IChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IChatService.swift; sourceTree = "<group>"; };
+		079D4FAA29ADAD3100681C34 /* IUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUserService.swift; sourceTree = "<group>"; };
+		079D4FAC29ADAD4C00681C34 /* IPostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPostService.swift; sourceTree = "<group>"; };
+		079D4FAE29ADAD6B00681C34 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		079D4FB029ADAD9700681C34 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		079D4FB229ADADB000681C34 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		079D4FB729AE677A00681C34 /* ICommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentService.swift; sourceTree = "<group>"; };
+		079D4FB929AE67E200681C34 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,7 @@
 				079D4F8D29AD9F1600681C34 /* Services */,
 				079D4F8C29AD9EF700681C34 /* Models */,
 				079D4F8B29AD9EE900681C34 /* Views */,
-				079D4F8A29AD9EDD00681C34 /* Controllers */,
+				079D4F8A29AD9EDD00681C34 /* ViewModels */,
 				079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */,
 				079D4F8029AD9EC700681C34 /* Assets.xcassets */,
 				079D4F8229AD9EC700681C34 /* Preview Content */,
@@ -108,15 +112,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		079D4F8A29AD9EDD00681C34 /* Controllers */ = {
+		079D4F8A29AD9EDD00681C34 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				079D4F9B29ADA9D700681C34 /* FeedController.swift */,
-				079D4F9D29ADAA0C00681C34 /* ProfileController.swift */,
-				079D4F9F29ADAA2800681C34 /* MessagesController.swift */,
-				079D4FA129ADAA4A00681C34 /* StoryController.swift */,
+				079D4F9B29ADA9D700681C34 /* FeedViewModel.swift */,
+				079D4F9D29ADAA0C00681C34 /* ProfileViewModel.swift */,
+				079D4F9F29ADAA2800681C34 /* MessagesViewModel.swift */,
+				079D4FA129ADAA4A00681C34 /* StoryViewModel.swift */,
 			);
-			path = Controllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		079D4F8B29AD9EE900681C34 /* Views */ = {
@@ -141,9 +145,10 @@
 			children = (
 				079D4FA729ADAC5E00681C34 /* Protocols */,
 				079D4FA329ADAAAE00681C34 /* StoryService.swift */,
-				079D4FAE29ADAD6B00681C34 /* MessagesService.swift */,
-				079D4FB029ADAD9700681C34 /* ProfileService.swift */,
-				079D4FB229ADADB000681C34 /* FeedService.swift */,
+				079D4FAE29ADAD6B00681C34 /* ChatService.swift */,
+				079D4FB029ADAD9700681C34 /* UserService.swift */,
+				079D4FB229ADADB000681C34 /* PostService.swift */,
+				079D4FB929AE67E200681C34 /* CommentService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -164,9 +169,10 @@
 			isa = PBXGroup;
 			children = (
 				079D4FA529ADAAFB00681C34 /* IStoryService.swift */,
-				079D4FA829ADACB000681C34 /* IMessagesService.swift */,
-				079D4FAA29ADAD3100681C34 /* IProfileService.swift */,
-				079D4FAC29ADAD4C00681C34 /* IFeedService.swift */,
+				079D4FA829ADACB000681C34 /* IChatService.swift */,
+				079D4FAA29ADAD3100681C34 /* IUserService.swift */,
+				079D4FAC29ADAD4C00681C34 /* IPostService.swift */,
+				079D4FB729AE677A00681C34 /* ICommentService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -248,24 +254,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				079D4F9329ADA34E00681C34 /* Comment.swift in Sources */,
-				079D4FA229ADAA4A00681C34 /* StoryController.swift in Sources */,
-				079D4FA929ADACB000681C34 /* IMessagesService.swift in Sources */,
+				079D4FA229ADAA4A00681C34 /* StoryViewModel.swift in Sources */,
+				079D4FA929ADACB000681C34 /* IChatService.swift in Sources */,
 				079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */,
 				079D4FA629ADAAFB00681C34 /* IStoryService.swift in Sources */,
 				079D4F9729ADA43C00681C34 /* Chat.swift in Sources */,
-				079D4FA029ADAA2800681C34 /* MessagesController.swift in Sources */,
-				079D4FAD29ADAD4C00681C34 /* IFeedService.swift in Sources */,
+				079D4FA029ADAA2800681C34 /* MessagesViewModel.swift in Sources */,
+				079D4FAD29ADAD4C00681C34 /* IPostService.swift in Sources */,
 				079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */,
-				079D4FB329ADADB000681C34 /* FeedService.swift in Sources */,
+				079D4FB329ADADB000681C34 /* PostService.swift in Sources */,
 				079D4F8F29ADA17800681C34 /* User.swift in Sources */,
-				079D4F9E29ADAA0C00681C34 /* ProfileController.swift in Sources */,
+				079D4F9E29ADAA0C00681C34 /* ProfileViewModel.swift in Sources */,
 				079D4FA429ADAAAE00681C34 /* StoryService.swift in Sources */,
-				079D4FAB29ADAD3100681C34 /* IProfileService.swift in Sources */,
+				079D4FAB29ADAD3100681C34 /* IUserService.swift in Sources */,
 				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
-				079D4FB129ADAD9700681C34 /* ProfileService.swift in Sources */,
+				079D4FB129ADAD9700681C34 /* UserService.swift in Sources */,
 				079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */,
-				079D4FAF29ADAD6B00681C34 /* MessagesService.swift in Sources */,
-				079D4F9C29ADA9D700681C34 /* FeedController.swift in Sources */,
+				079D4FAF29ADAD6B00681C34 /* ChatService.swift in Sources */,
+				079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */,
+				079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */,
+				079D4F9C29ADA9D700681C34 /* FeedViewModel.swift in Sources */,
 				079D4F9529ADA3B800681C34 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,8 @@
 
 import Foundation
 
-class FeedService: IFeedService {
-    
+class PostService: IPostService {
+    func GetPostByPostId(postId: Int) -> Post {
+        
+    }
 }

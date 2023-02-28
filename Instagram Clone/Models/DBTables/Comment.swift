@@ -30,6 +30,12 @@ struct Comment: TableRecord, FetchableRecord {
     
     //MARK: - Initialization
     
+    init(postId: Int, userId: Int, text: String) {
+        self.postId = postId
+        self.userId = userId
+        self.text = text
+    }
+    
     init(row: GRDB.Row) throws {
         commentId = row[Table.commentId]
         postId = row[Table.postId]
