@@ -32,6 +32,7 @@
 		079D4FB629ADBB3100681C34 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 079D4FB529ADBB3100681C34 /* GRDB */; };
 		079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB729AE677A00681C34 /* ICommentService.swift */; };
 		079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB929AE67E200681C34 /* CommentService.swift */; };
+		079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FBC29AEAEC500681C34 /* DummyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		079D4FB229ADADB000681C34 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		079D4FB729AE677A00681C34 /* ICommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentService.swift; sourceTree = "<group>"; };
 		079D4FB929AE67E200681C34 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		079D4FBC29AEAEC500681C34 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = ../../../../../../../Documents/DummyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		079D4F8C29AD9EF700681C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				079D4FBB29AEAEAE00681C34 /* DummyData */,
 				079D4F9A29ADA98500681C34 /* DBTables */,
 				079D4F9829ADA83800681C34 /* CurrentUser.swift */,
 			);
@@ -175,6 +178,14 @@
 				079D4FB729AE677A00681C34 /* ICommentService.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		079D4FBB29AEAEAE00681C34 /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				079D4FBC29AEAEC500681C34 /* DummyData.swift */,
+			);
+			path = DummyData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				079D4FAB29ADAD3100681C34 /* IUserService.swift in Sources */,
 				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
 				079D4FB129ADAD9700681C34 /* UserService.swift in Sources */,
+				079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */,
 				079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */,
 				079D4FAF29ADAD6B00681C34 /* ChatService.swift in Sources */,
 				079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */,

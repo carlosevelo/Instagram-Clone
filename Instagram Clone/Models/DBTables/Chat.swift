@@ -26,9 +26,15 @@ struct Chat: TableRecord, FetchableRecord {
     var chatId: Int
     var userId: Int
     var recipientId: Int
-    var messages: [Message]
+    var messages: [Message]?
     
     //MARK: - Initialization
+    
+    init(userId: Int, recipientId: Int, messages: [Message]?) {
+        self.userId = userId
+        self.recipientId = recipientId
+        self.messages = messages
+    }
     
     init(row: Row) {
         chatId = row[Table.chatId]
@@ -60,6 +66,12 @@ struct Message: TableRecord, FetchableRecord {
     
     //MARK: - Initialization
 
+    init(chatId: Int, userId: Int, text: String) {
+        self.chatId = chatId
+        self.userId = userId
+        self.text = text
+    }
+    
     init(row: GRDB.Row) {
         messageID = row[Table.messageID]
         chatId = row[Table.chatId]

@@ -22,12 +22,17 @@ struct Story: TableRecord, FetchableRecord {
     
     //MARK: - Properties
     
-    var storyId: String
-    var userId: String
+    var storyId: Int
+    var userId: Int
     //var media:
     var date: Date
     
     //MARK: - Initialization
+    
+    init(userId: Int, date: Date) {
+        self.userId = userId
+        self.date = date
+    }
     
     init(row: Row) {
         storyId = row[Table.storyId]
