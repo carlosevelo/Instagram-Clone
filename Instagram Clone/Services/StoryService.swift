@@ -9,7 +9,7 @@ import Foundation
 
 class StoryService: IStoryService {
     func CreateStory(userId: String, date: Date) {
-        <#code#>
+        
     }
     
     func GetStoryByUserId(chatId: Int) -> Story {
@@ -21,12 +21,13 @@ class StoryService: IStoryService {
     }
     
     func UpdateStory(storyId: Int, userId: Int, date: Date) {
-        <#code#>
+        
     }
     
     func DeleteStory(storyId: Int) {
-        <#code#>
+        
     }
+    
     
     
 }

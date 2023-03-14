@@ -9,7 +9,7 @@ import Foundation
 
 class ChatService: IChatService {
     func CreateChat(userId: String, recipientId: Int, messages: [Message]) {
-        <#code#>
+        
     }
     
     func GetChatByChatId(chatId: Int) -> Chat {
@@ -21,11 +21,11 @@ class ChatService: IChatService {
     }
     
     func UpdateChat(chatId: Int, userId: Int, recipientId: Int, messages: [Message]) {
-        <#code#>
+        
     }
     
     func DeleteComment(chatId: Int) {
-        <#code#>
+        
     }
     
     

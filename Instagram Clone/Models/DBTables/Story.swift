@@ -6,19 +6,8 @@
 //
 
 import Foundation
-import GRDB
 
-struct Story: TableRecord, FetchableRecord {
-    
-    //MARK: - Constants
-    
-    struct Table {
-        static let databaseTableName = "chat"
-        
-        static let storyId = "DtoryId"
-        static let userId = "UserId"
-        static let date = "Date"
-    }
+struct Story {
     
     //MARK: - Properties
     
@@ -32,11 +21,5 @@ struct Story: TableRecord, FetchableRecord {
     init(userId: Int, date: Date) {
         self.userId = userId
         self.date = date
-    }
-    
-    init(row: Row) {
-        storyId = row[Table.storyId]
-        userId = row[Table.userId]
-        date = row[Table.date]
     }
 }

@@ -6,20 +6,8 @@
 //
 
 import Foundation
-import GRDB
 
-struct Comment: TableRecord, FetchableRecord {
-    
-    // MARK: - Constants
-
-    struct Table {
-        static let databaseTableName = "comment"
-
-        static let commentId = "CommentId"
-        static let postId = "PostId"
-        static let userId = "UserId"
-        static let text = "Text"
-    }
+struct Comment {
     
     //MARK: - Properties
     
@@ -35,12 +23,4 @@ struct Comment: TableRecord, FetchableRecord {
         self.userId = userId
         self.text = text
     }
-    
-    init(row: GRDB.Row) throws {
-        commentId = row[Table.commentId]
-        postId = row[Table.postId]
-        userId = row[Table.userId]
-        text = row[Table.text]
-    }
-    
 }

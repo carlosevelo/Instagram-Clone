@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078D14A229C01F8F00199030 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A129C01F8F00199030 /* FirebaseAuth */; };
+		078D14A429C01F8F00199030 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A329C01F8F00199030 /* FirebaseFirestoreSwift */; };
+		078D14A629C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A529C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta */; };
 		079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */; };
 		079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7E29AD9EC600681C34 /* ContentView.swift */; };
 		079D4F8129AD9EC700681C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D4F8029AD9EC700681C34 /* Assets.xcassets */; };
@@ -29,7 +32,6 @@
 		079D4FAF29ADAD6B00681C34 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FAE29ADAD6B00681C34 /* ChatService.swift */; };
 		079D4FB129ADAD9700681C34 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB029ADAD9700681C34 /* UserService.swift */; };
 		079D4FB329ADADB000681C34 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* PostService.swift */; };
-		079D4FB629ADBB3100681C34 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 079D4FB529ADBB3100681C34 /* GRDB */; };
 		079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB729AE677A00681C34 /* ICommentService.swift */; };
 		079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB929AE67E200681C34 /* CommentService.swift */; };
 		079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FBC29AEAEC500681C34 /* DummyData.swift */; };
@@ -69,7 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				079D4FB629ADBB3100681C34 /* GRDB in Frameworks */,
+				078D14A229C01F8F00199030 /* FirebaseAuth in Frameworks */,
+				078D14A629C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				078D14A429C01F8F00199030 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +209,9 @@
 			);
 			name = "Instagram Clone";
 			packageProductDependencies = (
-				079D4FB529ADBB3100681C34 /* GRDB */,
+				078D14A129C01F8F00199030 /* FirebaseAuth */,
+				078D14A329C01F8F00199030 /* FirebaseFirestoreSwift */,
+				078D14A529C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta */,
 			);
 			productName = "Instagram Clone";
 			productReference = 079D4F7929AD9EC600681C34 /* Instagram Clone.app */;
@@ -236,7 +242,7 @@
 			);
 			mainGroup = 079D4F7029AD9EC600681C34;
 			packageReferences = (
-				079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				078D14A029C01F8F00199030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 079D4F7A29AD9EC600681C34 /* Products */;
 			projectDirPath = "";
@@ -489,9 +495,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+		078D14A029C01F8F00199030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -500,10 +506,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		079D4FB529ADBB3100681C34 /* GRDB */ = {
+		078D14A129C01F8F00199030 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 079D4FB429ADBB3100681C34 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
-			productName = GRDB;
+			package = 078D14A029C01F8F00199030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		078D14A329C01F8F00199030 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 078D14A029C01F8F00199030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		078D14A529C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 078D14A029C01F8F00199030 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,7 +9,7 @@ import Foundation
 
 class UserService: IUserService {
     func CreateUser(username: String, name: String, bio: String) {
-        <#code#>
+        
     }
     
     func GetUserByUserId(userId: Int) -> User {
@@ -29,11 +29,11 @@ class UserService: IUserService {
     }
     
     func UpdateUser(userId: Int, username: String, name: String, bio: String) {
-        <#code#>
+        
     }
     
     func DeleteUser(userId: Int) {
-        <#code#>
+        
     }
     
     

@@ -10,7 +10,7 @@ import Foundation
 class PostService: IPostService {
     
     func CreatePost(userId: Int, caption: String, date: Date) {
-        <#code#>
+        
     }
     func GetPostByPostId(postId: Int) -> Post {
         return DummyData.dummyPost
@@ -25,11 +25,11 @@ class PostService: IPostService {
     }
     
     func UpdatePost(postId: Int, userId: Int, caption: String, date: Date) {
-        <#code#>
+        
     }
     
     func DeletePost(postId: Int) {
-        <#code#>
+        
     }
     
 }
