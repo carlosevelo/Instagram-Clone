@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07554D6029C027FF007BE2F3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D5F29C027FF007BE2F3 /* HomeHeaderView.swift */; };
+		07554D6229C57DF0007BE2F3 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6129C57DF0007BE2F3 /* NavBarView.swift */; };
+		07554D6429C5836A007BE2F3 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6329C5836A007BE2F3 /* FeedView.swift */; };
+		07554D6629C5837F007BE2F3 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6529C5837F007BE2F3 /* DiscoverView.swift */; };
+		07554D6829C5839D007BE2F3 /* AddMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6729C5839D007BE2F3 /* AddMediaView.swift */; };
+		07554D6A29C583A9007BE2F3 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6929C583A9007BE2F3 /* ReelsView.swift */; };
+		07554D6C29C583B4007BE2F3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07554D6B29C583B4007BE2F3 /* ProfileView.swift */; };
 		078D14A229C01F8F00199030 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A129C01F8F00199030 /* FirebaseAuth */; };
 		078D14A429C01F8F00199030 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A329C01F8F00199030 /* FirebaseFirestoreSwift */; };
 		078D14A629C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 078D14A529C01F8F00199030 /* FirebaseInAppMessagingSwift-Beta */; };
 		079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */; };
-		079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7E29AD9EC600681C34 /* ContentView.swift */; };
+		079D4F7F29AD9EC600681C34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F7E29AD9EC600681C34 /* HomeView.swift */; };
 		079D4F8129AD9EC700681C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D4F8029AD9EC700681C34 /* Assets.xcassets */; };
 		079D4F8429AD9EC700681C34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079D4F8329AD9EC700681C34 /* Preview Assets.xcassets */; };
 		079D4F8F29ADA17800681C34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4F8E29ADA17800681C34 /* User.swift */; };
@@ -38,9 +45,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07554D5F29C027FF007BE2F3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		07554D6129C57DF0007BE2F3 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		07554D6329C5836A007BE2F3 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		07554D6529C5837F007BE2F3 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		07554D6729C5839D007BE2F3 /* AddMediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMediaView.swift; sourceTree = "<group>"; };
+		07554D6929C583A9007BE2F3 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
+		07554D6B29C583B4007BE2F3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		079D4F7929AD9EC600681C34 /* Instagram Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_CloneApp.swift; sourceTree = "<group>"; };
-		079D4F7E29AD9EC600681C34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		079D4F7E29AD9EC600681C34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		079D4F8029AD9EC700681C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		079D4F8329AD9EC700681C34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		079D4F8E29ADA17800681C34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -132,7 +146,14 @@
 		079D4F8B29AD9EE900681C34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				079D4F7E29AD9EC600681C34 /* ContentView.swift */,
+				079D4F7E29AD9EC600681C34 /* HomeView.swift */,
+				07554D5F29C027FF007BE2F3 /* HomeHeaderView.swift */,
+				07554D6129C57DF0007BE2F3 /* NavBarView.swift */,
+				07554D6329C5836A007BE2F3 /* FeedView.swift */,
+				07554D6529C5837F007BE2F3 /* DiscoverView.swift */,
+				07554D6729C5839D007BE2F3 /* AddMediaView.swift */,
+				07554D6929C583A9007BE2F3 /* ReelsView.swift */,
+				07554D6B29C583B4007BE2F3 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,23 +294,30 @@
 				079D4F9329ADA34E00681C34 /* Comment.swift in Sources */,
 				079D4FA229ADAA4A00681C34 /* StoryViewModel.swift in Sources */,
 				079D4FA929ADACB000681C34 /* IChatService.swift in Sources */,
-				079D4F7F29AD9EC600681C34 /* ContentView.swift in Sources */,
+				07554D6A29C583A9007BE2F3 /* ReelsView.swift in Sources */,
+				079D4F7F29AD9EC600681C34 /* HomeView.swift in Sources */,
 				079D4FA629ADAAFB00681C34 /* IStoryService.swift in Sources */,
 				079D4F9729ADA43C00681C34 /* Chat.swift in Sources */,
 				079D4FA029ADAA2800681C34 /* MessagesViewModel.swift in Sources */,
 				079D4FAD29ADAD4C00681C34 /* IPostService.swift in Sources */,
+				07554D6229C57DF0007BE2F3 /* NavBarView.swift in Sources */,
 				079D4F7D29AD9EC600681C34 /* Instagram_CloneApp.swift in Sources */,
+				07554D6429C5836A007BE2F3 /* FeedView.swift in Sources */,
 				079D4FB329ADADB000681C34 /* PostService.swift in Sources */,
 				079D4F8F29ADA17800681C34 /* User.swift in Sources */,
+				07554D6829C5839D007BE2F3 /* AddMediaView.swift in Sources */,
 				079D4F9E29ADAA0C00681C34 /* ProfileViewModel.swift in Sources */,
+				07554D6029C027FF007BE2F3 /* HomeHeaderView.swift in Sources */,
 				079D4FA429ADAAAE00681C34 /* StoryService.swift in Sources */,
 				079D4FAB29ADAD3100681C34 /* IUserService.swift in Sources */,
 				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
 				079D4FB129ADAD9700681C34 /* UserService.swift in Sources */,
 				079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */,
+				07554D6C29C583B4007BE2F3 /* ProfileView.swift in Sources */,
 				079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */,
 				079D4FAF29ADAD6B00681C34 /* ChatService.swift in Sources */,
 				079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */,
+				07554D6629C5837F007BE2F3 /* DiscoverView.swift in Sources */,
 				079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */,
 				079D4F9C29ADA9D700681C34 /* FeedViewModel.swift in Sources */,
 				079D4F9529ADA3B800681C34 /* Story.swift in Sources */,

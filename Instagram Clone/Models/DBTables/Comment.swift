@@ -11,7 +11,7 @@ struct Comment {
     
     //MARK: - Properties
     
-    var commentId: Int
+    var commentId: Int?
     var postId: Int
     var userId: Int
     var text: String

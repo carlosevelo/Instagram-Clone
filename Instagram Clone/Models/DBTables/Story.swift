@@ -11,7 +11,7 @@ struct Story {
     
     //MARK: - Properties
     
-    var storyId: Int
+    var storyId: Int?
     var userId: Int
     //var media:
     var date: Date

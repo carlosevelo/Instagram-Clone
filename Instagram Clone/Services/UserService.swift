@@ -21,7 +21,7 @@ class UserService: IUserService {
     }
     
     func GetFollowerIdListByUserId(userId: Int) -> [Int] {
-        return [DummyData.dummyUser.userId]
+        return [DummyData.dummyUser.userId!]
     }
     
     func GetFollowingCountByUserId(userId: Int) -> Int {
