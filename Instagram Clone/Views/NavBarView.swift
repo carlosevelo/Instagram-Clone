@@ -33,7 +33,7 @@ struct NavBarView: View {
                     }
             }
             .toolbar(.visible, for: .tabBar)
-            .toolbarBackground(Color.black, for: .tabBar)
+            .toolbarBackground(Color.white, for: .tabBar)
         }
     }
 }

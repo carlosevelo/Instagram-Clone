@@ -9,12 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HomeHeaderView()
-            Spacer()
+            Divider()
             NavBarView()
-                .foregroundColor(Color.blue)
-                .frame(height: 90)
         }
         
     }
