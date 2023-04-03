@@ -14,14 +14,15 @@ struct User {
     var userId: Int?
     var username: String
     var name: String
-    //var profilePicture:
+    var profilePicture: String
     var bio: String
     
     //MARK: - Initialization
     
-    init(username: String, name: String, bio: String) {
+    init(username: String, name: String, bio: String, profilePicture: String) {
         self.username = username
         self.name = name
         self.bio = bio
+        self.profilePicture = profilePicture
     }
 }

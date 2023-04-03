@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct PostView: View {
+    var post: Post
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 HStack {
-                    Image(systemName: "person.circle")
+                    Image(uiImage: UIImage(imageLiteralResourceName: post.user?.profilePicture ?? "default"))
                         .resizable()
                         .frame(width: 35, height: 35)
-                    Text("Username")
+                    Text(post.user?.username ?? "No Username")
                     Spacer()
                     Image(systemName: "ellipsis")
                 }
                 .padding([.leading, .trailing])
-                Image(systemName: "photo")
+                Image(uiImage: UIImage(imageLiteralResourceName: post.media))
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.width)
                 HStack {
@@ -50,10 +52,10 @@ struct PostView: View {
                     .padding(.bottom, 1)
                     .frame(width: geometry.size.width, alignment: .leading)
                 HStack {
-                    Text("Username")
+                    Text(post.user?.username ?? "No username")
                         .fontWeight(.bold)
                         .padding(.leading)
-                    Text("This is my caption.")
+                    Text(post.caption)
                         .padding(.trailing)
                 }
                 .padding(.bottom, 1)
@@ -76,6 +78,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(post: Post(userId: 1, caption: "caption", date: Date(), media: "post"))
     }
 }
