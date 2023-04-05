@@ -7,22 +7,25 @@
 
 import Foundation
 
-struct User {
+struct User: Codable {
     
     //MARK: - Properties
     
-    var userId: Int?
+    var userId: Int
+    var email: String
+    var profileImageUrl: String
     var username: String
-    var name: String
-    var profilePicture: String
+    var fullName: String
     var bio: String
     
     //MARK: - Initialization
     
-    init(username: String, name: String, bio: String, profilePicture: String) {
+    init(userId: Int, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
+        self.userId = userId
+        self.email = email
+        self.profileImageUrl = profileImageUrl
         self.username = username
-        self.name = name
+        self.fullName = fullName
         self.bio = bio
-        self.profilePicture = profilePicture
     }
 }

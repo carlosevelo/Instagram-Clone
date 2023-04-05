@@ -19,8 +19,8 @@ struct SignInView: View {
                         .font(.system(size: 32, weight: .heavy, design: .rounded))
                 }
                 VStack {
-                    FormField(value: $username, icon: "person.fill", placeholder: "Username")
-                    FormField(value: $password, icon: "lock.fill", placeholder: "Password", isSecure: true)
+                    FormField(value: $username, placeholder: "Username")
+                    FormField(value: $password, placeholder: "Password", isSecure: true)
                 }
                 
                 Button(action: {}) {

@@ -14,7 +14,7 @@ struct PostView: View {
         GeometryReader { geometry in
             VStack {
                 HStack {
-                    Image(uiImage: UIImage(imageLiteralResourceName: post.user?.profilePicture ?? "default"))
+                    Image(uiImage: UIImage(imageLiteralResourceName: post.user?.profileImageUrl ?? "default"))
                         .resizable()
                         .frame(width: 35, height: 35)
                     Text(post.user?.username ?? "No Username")

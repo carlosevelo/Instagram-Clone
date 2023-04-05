@@ -11,6 +11,7 @@ struct SignUpView: View {
     @State var username = ""
     @State var email = ""
     @State var password = ""
+    @State var fullName = ""
     
     var body: some View {
         //If needed, embed this vstack in scrollview
@@ -25,9 +26,10 @@ struct SignUpView: View {
             }
             
             
-            FormField(value: $email, icon: "envelope.fill", placeholder: "Email")
-            FormField(value: $username, icon: "person.fill", placeholder: "Username")
-            FormField(value: $password, icon: "lock.fill", placeholder: "Password", isSecure: true)
+            FormField(value: $email, placeholder: "Email")
+            FormField(value: $fullName, placeholder: "Full Name")
+            FormField(value: $username, placeholder: "Username")
+            FormField(value: $password, placeholder: "Password", isSecure: true)
             Button(action: {}) {
                 Text("Sign up")
                     .font(.title)
