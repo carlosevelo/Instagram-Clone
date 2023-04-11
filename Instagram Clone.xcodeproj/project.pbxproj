@@ -52,7 +52,6 @@
 		079D4FB329ADADB000681C34 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB229ADADB000681C34 /* PostService.swift */; };
 		079D4FB829AE677A00681C34 /* ICommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB729AE677A00681C34 /* ICommentService.swift */; };
 		079D4FBA29AE67E200681C34 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FB929AE67E200681C34 /* CommentService.swift */; };
-		079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079D4FBC29AEAEC500681C34 /* DummyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +72,7 @@
 		0757E1FC29DE30D300FF049F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0757E1FE29DE30EE00FF049F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		0757E20929E0DBB500FF049F /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		0757E20C29E5C07300FF049F /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		079D4F7929AD9EC600681C34 /* Instagram Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		079D4F7C29AD9EC600681C34 /* Instagram_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram_CloneApp.swift; sourceTree = "<group>"; };
 		079D4F7E29AD9EC600681C34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -98,7 +98,6 @@
 		079D4FB229ADADB000681C34 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		079D4FB729AE677A00681C34 /* ICommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICommentService.swift; sourceTree = "<group>"; };
 		079D4FB929AE67E200681C34 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
-		079D4FBC29AEAEC500681C34 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyData.swift; path = ../../../../../../../Documents/DummyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +127,7 @@
 		0757E20B29E5C03A00FF049F /* DummyData */ = {
 			isa = PBXGroup;
 			children = (
+				0757E20C29E5C07300FF049F /* DummyData.swift */,
 			);
 			name = DummyData;
 			sourceTree = "<group>";
@@ -256,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				0757E20B29E5C03A00FF049F /* DummyData */,
-				079D4FBC29AEAEC500681C34 /* DummyData.swift */,
 			);
 			path = DummyData;
 			sourceTree = "<group>";
@@ -368,7 +367,6 @@
 				0757E1F929DCD8D000FF049F /* SignUpViewModel.swift in Sources */,
 				079D4F9129ADA29B00681C34 /* Post.swift in Sources */,
 				079D4FB129ADAD9700681C34 /* UserService.swift in Sources */,
-				079D4FBD29AEAEC500681C34 /* DummyData.swift in Sources */,
 				0757E1F329DCD08200FF049F /* FormField.swift in Sources */,
 				07554D6C29C583B4007BE2F3 /* ProfileView.swift in Sources */,
 				079D4F9929ADA83800681C34 /* CurrentUser.swift in Sources */,
