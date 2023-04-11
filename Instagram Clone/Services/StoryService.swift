@@ -28,6 +28,4 @@ class StoryService: IStoryService {
         
     }
     
-    
-    
 }

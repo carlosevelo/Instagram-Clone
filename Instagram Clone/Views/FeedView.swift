@@ -12,6 +12,8 @@ struct FeedView: View {
     @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
+        HomeHeaderView()
+        Divider()
         ScrollView {
             ForEach(viewModel.feed, id: \.postId) { post in
                 PostView(post: post)

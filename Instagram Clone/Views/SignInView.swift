@@ -10,7 +10,7 @@ import SwiftUI
 struct SignInView: View {
     @State private var email = ""
     @State private var password = ""
-    @ObservedObject var signInViewModel = SignInViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -25,24 +25,31 @@ struct SignInView: View {
                 }
                 
                 Button {
-                    signInViewModel.SignIn(email, password)
-                    if signInViewModel.signedIn {
-                        
-                    }
+                    authViewModel.SignIn(email, password)
                 } label: {
                     Text("Sign in")
                         .font(.title)
                         .modifier(ButtonModifier())
-                }
-                NavigationLink("Success") {
-                    HomeView()
+                }.alert(isPresented: $authViewModel.signInError) {
+                    Alert(title: Text("Oops!"))
+                }.alert(isPresented: $authViewModel.signedIn) {
+                    Alert(title: Text("Success!"))
                 }
                 HStack {
                     Text("Don't have an account?")
-                    NavigationLink(destination: SignUpView()) {
+                    NavigationLink {
+                        SignUpView()
+                    } label: {
                         Text("Sign Up.")
                             .font(.system(size: 15, weight: .semibold))
                     }
+                }
+                Button {
+                    authViewModel.SignOut()
+                } label: {
+                    Text("Sign out")
+                        .font(.title)
+                        .modifier(ButtonModifier())
                 }
             }
             .padding()

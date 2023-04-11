@@ -10,11 +10,8 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
-            HomeHeaderView()
-            Divider()
             NavBarView()
         }
-        
     }
 }
 

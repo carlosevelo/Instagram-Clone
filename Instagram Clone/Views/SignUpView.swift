@@ -12,7 +12,7 @@ struct SignUpView: View {
     @State var email = ""
     @State var password = ""
     @State var fullName = ""
-    var signUpViewModel = SignUpViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         //If needed, embed this vstack in scrollview
@@ -31,7 +31,7 @@ struct SignUpView: View {
             FormField(value: $username, placeholder: "Username")
             FormField(value: $password, placeholder: "Password", isSecure: true)
             Button {
-                signUpViewModel.SignUp(email, fullName, username, password)
+                authViewModel.SignUp(email, fullName, username, password)
                 
             } label: {
                 Text("Sign up")
