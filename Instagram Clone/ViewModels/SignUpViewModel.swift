@@ -9,4 +9,8 @@ import Foundation
 
 class SignUpViewModel : ObservableObject {
     
+    
+    func SignUp(_ email: String, _ fullName: String, _ username: String, _ password: String) {
+        AuthService.SignUp(email: email, fullName: fullName, username: username, password: password)
+    }
 }

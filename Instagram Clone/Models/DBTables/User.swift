@@ -11,7 +11,7 @@ struct User: Codable {
     
     //MARK: - Properties
     
-    var userId: Int
+    var uid: Int
     var email: String
     var profileImageUrl: String
     var username: String
@@ -20,8 +20,8 @@ struct User: Codable {
     
     //MARK: - Initialization
     
-    init(userId: Int, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
-        self.userId = userId
+    init(uid: Int, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
+        self.uid = uid
         self.email = email
         self.profileImageUrl = profileImageUrl
         self.username = username

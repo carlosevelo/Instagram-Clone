@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
+    @ObservedObject var signInViewModel = SignInViewModel()
     
     var body: some View {
         NavigationView {
@@ -19,14 +20,22 @@ struct SignInView: View {
                         .font(.system(size: 32, weight: .heavy, design: .rounded))
                 }
                 VStack {
-                    FormField(value: $username, placeholder: "Username")
+                    FormField(value: $email, placeholder: "Email")
                     FormField(value: $password, placeholder: "Password", isSecure: true)
                 }
                 
-                Button(action: {}) {
+                Button {
+                    signInViewModel.SignIn(email, password)
+                    if signInViewModel.signedIn {
+                        
+                    }
+                } label: {
                     Text("Sign in")
                         .font(.title)
                         .modifier(ButtonModifier())
+                }
+                NavigationLink("Success") {
+                    HomeView()
                 }
                 HStack {
                     Text("Don't have an account?")

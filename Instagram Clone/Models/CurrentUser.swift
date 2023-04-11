@@ -8,7 +8,5 @@
 import Foundation
 
 class CurrentUser {
-    var userId: String = ""
-    var username: String = ""
-    var name: String = ""
+    public var user: User?  = nil
 }

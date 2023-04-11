@@ -12,6 +12,7 @@ struct SignUpView: View {
     @State var email = ""
     @State var password = ""
     @State var fullName = ""
+    var signUpViewModel = SignUpViewModel()
     
     var body: some View {
         //If needed, embed this vstack in scrollview
@@ -25,16 +26,19 @@ struct SignUpView: View {
                     .multilineTextAlignment(.center)
             }
             
-            
             FormField(value: $email, placeholder: "Email")
             FormField(value: $fullName, placeholder: "Full Name")
             FormField(value: $username, placeholder: "Username")
             FormField(value: $password, placeholder: "Password", isSecure: true)
-            Button(action: {}) {
+            Button {
+                signUpViewModel.SignUp(email, fullName, username, password)
+                
+            } label: {
                 Text("Sign up")
                     .font(.title)
                     .modifier(ButtonModifier())
             }
+
         }
         .padding()
     }

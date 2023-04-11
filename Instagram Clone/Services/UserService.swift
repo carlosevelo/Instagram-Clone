@@ -16,12 +16,16 @@ class UserService: IUserService {
         return DummyData.dummyUser
     }
     
+    func GetUserByUid(uid: String) -> User {
+        return DummyData.dummyUser
+    }
+    
     func GetUserByPostId(postId: Int) -> User {
         return DummyData.dummyUser
     }
     
     func GetFollowerIdListByUserId(userId: Int) -> [Int] {
-        return [DummyData.dummyUser.userId]
+        return [DummyData.dummyUser.uid]
     }
     
     func GetFollowingCountByUserId(userId: Int) -> Int {
