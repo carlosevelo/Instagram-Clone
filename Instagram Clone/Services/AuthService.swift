@@ -1,5 +1,5 @@
 //
-//  AuthViewModel.swift
+//  AuthService.swift
 //  Instagram Clone
 //
 //  Created by Carlos Evelo on 4/7/23.
@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-class AuthViewModel : ObservableObject {
+class AuthService : ObservableObject {
     @Published var signedIn = false
     @Published var signInError = false
     

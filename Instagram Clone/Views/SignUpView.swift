@@ -12,10 +12,9 @@ struct SignUpView: View {
     @State var email = ""
     @State var password = ""
     @State var fullName = ""
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authService: AuthService
     
     var body: some View {
-        //If needed, embed this vstack in scrollview
         VStack(spacing: 20) {
             VStack(alignment: .center) {
                 Text("Instagram")
@@ -31,8 +30,7 @@ struct SignUpView: View {
             FormField(value: $username, placeholder: "Username")
             FormField(value: $password, placeholder: "Password", isSecure: true)
             Button {
-                authViewModel.SignUp(email, fullName, username, password)
-                
+                authService.SignUp(email, fullName, username, password)
             } label: {
                 Text("Sign up")
                     .font(.title)

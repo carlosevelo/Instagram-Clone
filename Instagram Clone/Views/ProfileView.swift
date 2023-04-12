@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var viewModel = ProfileViewModel()
+    
     var body: some View {
-        ProfileHeaderView()
-        Text("Profile")
+        GeometryReader { geo in
+            VStack (spacing: 0) {
+                ProfileHeaderView()
+                Divider()
+                ScrollView {
+                    Text("Profile Deets")
+                    Text("Posts")
+                }
+            }
+        }
     }
 }
 

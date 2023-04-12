@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthService
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(Color(UIColor.systemBackground))
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(UIColor.systemBackground))
+                VStack {
+                    Spacer()
                     HStack(alignment: .center) {
                         Text("Instagram")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
@@ -34,15 +35,18 @@ struct ProfileHeaderView: View {
                             authViewModel.SignOut()
                         } label: {
                             Text("Sign Out")
+                                .font(.body)
+                                .foregroundColor(.black)
                         }
+                        .padding(.trailing)
                     }
                     .foregroundColor(Color.white)
+                    .padding(.bottom, 5)
                 }
-                .frame(width: geometry.size.width, height: 50)
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .frame(height: 50)
-        //.background(Color(UIColor.systemBackground))
     }
 
 }

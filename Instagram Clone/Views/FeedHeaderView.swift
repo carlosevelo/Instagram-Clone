@@ -1,5 +1,5 @@
 //
-//  HomeHeaderView.swift
+//  FeedHeaderView.swift
 //  Instagram Clone
 //
 //  Created by Carlos Evelo on 3/13/23.
@@ -7,16 +7,17 @@
 
 import SwiftUI
 
-struct HomeHeaderView: View {
+struct FeedHeaderView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(Color(UIColor.systemBackground))
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(UIColor.systemBackground))
+                VStack {
+                    Spacer()
                     HStack(alignment: .center) {
                         Text("Instagram")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
@@ -40,17 +41,17 @@ struct HomeHeaderView: View {
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                     }
                     .foregroundColor(Color.white)
+                    .padding(.bottom, 5)
                 }
-                .frame(width: geometry.size.width, height: 50)
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .frame(height: 50)
-        //.background(Color(UIColor.systemBackground))
     }
 }
 
 struct HomeHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeHeaderView()
+        FeedHeaderView()
     }
 }
