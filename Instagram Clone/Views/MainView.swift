@@ -1,5 +1,5 @@
 //
-//  NavBarView.swift
+//  MainView.swift
 //  Instagram Clone
 //
 //  Created by Carlos Evelo on 3/17/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavBarView: View {
+struct MainView: View {
     var body: some View {
         TabView {
             Group {
@@ -35,11 +35,17 @@ struct NavBarView: View {
             .toolbar(.visible, for: .tabBar)
             .toolbarBackground(Color.white, for: .tabBar)
         }
+        .onAppear {
+            // correct the transparency bug for Tab bars
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithOpaqueBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
     }
 }
 
 struct NavBarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavBarView()
+        MainView()
     }
 }

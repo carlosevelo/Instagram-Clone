@@ -26,7 +26,7 @@ struct Instagram_CloneApp: App {
         WindowGroup {
             NavigationView {
                 if authService.signedIn {
-                    HomeView()
+                    MainView()
                 } else {
                     SignInView()
                 }

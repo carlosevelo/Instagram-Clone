@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @EnvironmentObject var authViewModel: AuthService
+    @EnvironmentObject var authService: AuthService
+    @ObservedObject var profileViewModel = ProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -19,9 +20,9 @@ struct ProfileHeaderView: View {
                 VStack {
                     Spacer()
                     HStack(alignment: .center) {
-                        Text("Instagram")
+                        Text("\(profileViewModel.currentUser?.username ?? "Unknown")")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
-                            .font(.largeTitle)
+                            .font(.title)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal, 15.0)
@@ -32,7 +33,7 @@ struct ProfileHeaderView: View {
                             .padding(.horizontal, 15.0)
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                         Button {
-                            authViewModel.SignOut()
+                            authService.SignOut()
                         } label: {
                             Text("Sign Out")
                                 .font(.body)

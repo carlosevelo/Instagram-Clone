@@ -13,9 +13,9 @@ struct User: Codable {
     
     var uid: Int
     var email: String
-    var profileImageUrl: String
     var username: String
     var fullName: String
+    var profileImageUrl: String
     var bio: String
     
     //MARK: - Initialization

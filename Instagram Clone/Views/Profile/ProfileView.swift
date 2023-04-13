@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @ObservedObject var viewModel = ProfileViewModel()
+    @StateObject var viewModel = ProfileViewModel()
     
     var body: some View {
         GeometryReader { geo in
@@ -16,10 +16,11 @@ struct ProfileView: View {
                 ProfileHeaderView()
                 Divider()
                 ScrollView {
-                    Text("Profile Deets")
+                    ProfileDetailsView()
                     Text("Posts")
                 }
             }
+            .environmentObject(viewModel)
         }
     }
 }

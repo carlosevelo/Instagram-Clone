@@ -12,14 +12,11 @@ import FirebaseAuth
 class AuthService : ObservableObject {
     @Published var signedIn = false
     @Published var signInError = false
+ 
+    var userService = UserService()
     
     static var storeRoot = Firestore.firestore()
-//    private var _userService: UserService
-//    
-//    init(userService: UserService) {
-//        _userService = userService
-//    }
-//
+
     func SignUp(_ email: String, _ fullName: String, _ username: String, _ password: String) {
         Auth.auth().createUser(withEmail: email, password: password) { (authData, error) in
             if error != nil {
@@ -27,8 +24,9 @@ class AuthService : ObservableObject {
             }
             guard let user = authData?.user else {return}
             UserDefaults.standard.set(user.uid, forKey: "uid")
-            UserDefaults.standard.set(user.displayName, forKey: "displayName")
             self.signedIn = true
+            
+            self.userService.CreateUser(uid: user.uid, email: email, username: username, name: fullName, profileImage: "", bio: "")
         }
     }
     

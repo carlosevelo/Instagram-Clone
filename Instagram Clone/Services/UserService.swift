@@ -7,11 +7,13 @@
 
 import Foundation
 
-class UserService: IUserService {
-    func CreateUser(username: String, name: String, bio: String) {
+class UserService {
+    //MARK: - Create
+    func CreateUser(uid: String, email: String, username: String, name: String, profileImage: String, bio: String) {
         
     }
     
+    //MARK: - Get
     func GetUserByUserId(userId: Int) -> User {
         return DummyData.dummyUser
     }
@@ -32,10 +34,12 @@ class UserService: IUserService {
         return 0
     }
     
+    //MARK: - Update
     func UpdateUser(userId: Int, username: String, name: String, bio: String) {
         
     }
     
+    //MARK: - Delete
     func DeleteUser(userId: Int) {
         
     }
