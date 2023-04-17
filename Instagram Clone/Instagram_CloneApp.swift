@@ -21,6 +21,7 @@ struct Instagram_CloneApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var authService = AuthService()
+    @StateObject var profileData = ProfileDataModel()
     
     var body: some Scene {
         WindowGroup {
@@ -33,6 +34,7 @@ struct Instagram_CloneApp: App {
             }
             .navigationViewStyle(.stack)
             .environmentObject(authService)
+            .environmentObject(profileData)
         }
     }
 }

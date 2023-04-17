@@ -14,16 +14,16 @@ struct Post {
     var postId: Int?
     var userId: Int
     var user: User?
-    var media: String
+    var url: String
     var caption: String
     var date: Date
     
     //MARK: - Initialization
     
-    init(userId: Int, caption: String, date: Date, media: String) {
+    init(userId: Int, caption: String, date: Date, url: String) {
         self.userId = userId
         self.caption = caption
         self.date = date
-        self.media = media
+        self.url = url
     }
 }

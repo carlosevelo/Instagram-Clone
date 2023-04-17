@@ -16,7 +16,7 @@ class PostService: IPostService {
         return DummyData.dummyPost
     }
     
-    func GetPostListByUserId(userId: Int) -> [Post] {
+    func GetPostListByUserId(userId: String) -> [Post] {
         return [DummyData.dummyPost]
     }
     

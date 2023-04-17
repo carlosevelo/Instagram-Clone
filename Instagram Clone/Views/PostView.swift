@@ -25,7 +25,7 @@ struct PostView: View {
                     Image(systemName: "ellipsis")
                 }
                 .padding([.leading, .trailing])
-                Image(uiImage: UIImage(imageLiteralResourceName: post.media))
+                Image(uiImage: UIImage(imageLiteralResourceName: post.url))
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.width)
                 HStack {
@@ -81,6 +81,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(userId: 1, caption: "caption", date: Date(), media: "post"))
+        PostView(post: Post(userId: 1, caption: "caption", date: Date(), url: "post"))
     }
 }

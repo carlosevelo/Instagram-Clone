@@ -9,7 +9,7 @@ import Foundation
 
 protocol IStoryService {
     //MARK: - Create Methods
-    func CreateStory(userId: String, date: Date) //Add media
+    func CreateStory(userId: String, date: Date) //Add url
     
     //MARK: - Get Methods
     func GetStoryByUserId(chatId: Int) -> Story

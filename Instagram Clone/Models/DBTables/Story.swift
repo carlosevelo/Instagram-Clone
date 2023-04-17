@@ -13,7 +13,7 @@ struct Story {
     
     var storyId: Int?
     var userId: Int
-    //var media:
+    //var url:
     var date: Date
     
     //MARK: - Initialization

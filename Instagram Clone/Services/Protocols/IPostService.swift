@@ -13,7 +13,7 @@ protocol IPostService {
     
     //MARK: - Get Methods
     func GetPostByPostId(postId: Int) -> Post
-    func GetPostListByUserId(userId: Int) -> [Post]
+    func GetPostListByUserId(userId: String) -> [Post]
     func GetFeedByUserId(userId: Int) -> [Post]
     
     //MARK: - Update Methods
