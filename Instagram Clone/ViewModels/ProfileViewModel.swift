@@ -11,15 +11,11 @@ import FirebaseAuth
 
 class ProfileViewModel: ObservableObject {
     var userService = UserService()
-
-    var currentUser: User? {
-        let user = Auth.auth().currentUser
-        if user != nil {
-            return userService.GetUserByUid(uid: user!.uid)
-        }
-        else {
-            return nil
-        }
+    
+    @Published var data = ProfileDataModel()
+    
+    func SaveProfile() {
+        //TODO: Save to firebase
     }
     
 }

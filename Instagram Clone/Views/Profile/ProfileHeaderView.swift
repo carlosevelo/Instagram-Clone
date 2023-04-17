@@ -11,6 +11,7 @@ struct ProfileHeaderView: View {
     @EnvironmentObject var authService: AuthService
     @ObservedObject var profileViewModel = ProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
+    @State var showAddPostSheet = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -20,7 +21,7 @@ struct ProfileHeaderView: View {
                 VStack {
                     Spacer()
                     HStack(alignment: .center) {
-                        Text("\(profileViewModel.currentUser?.username ?? "Unknown")")
+                        Text("\(profileViewModel.data.username)")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             .font(.title)
                             .fontWeight(.bold)
@@ -32,6 +33,12 @@ struct ProfileHeaderView: View {
                             .frame(width: 25.0, height: 25.0)
                             .padding(.horizontal, 15.0)
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .onTapGesture {
+                                showAddPostSheet.toggle()
+                            }
+                            .sheet(isPresented: $showAddPostSheet) {
+                                AddPostView(showAddPostSheet: $showAddPostSheet)
+                            }
                         Button {
                             authService.SignOut()
                         } label: {

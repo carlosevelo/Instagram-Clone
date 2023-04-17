@@ -8,9 +8,9 @@
 import Foundation
 
 class FeedViewModel: ObservableObject {
+    
     var feed: [Post] {
-        DummyData.GetFeed()
+        return []
+        //DummyData.GetFeed()
     }
-    
-    
 }

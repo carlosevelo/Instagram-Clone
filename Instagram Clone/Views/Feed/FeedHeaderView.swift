@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedHeaderView: View {
     
     @Environment(\.colorScheme) var colorScheme
+    @State var showAddPostSheet = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,18 +27,27 @@ struct FeedHeaderView: View {
                             .multilineTextAlignment(.leading)
                             .padding(.horizontal, 15.0)
                         Spacer()
+                        Image(systemName: "plus.app")
+                            .resizable()
+                            .frame(width: 25.0, height: 25.0)
+                            .padding(.horizontal, 5.0)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
+                            .onTapGesture {
+                                showAddPostSheet.toggle()
+                            }
+                            .sheet(isPresented: $showAddPostSheet) {
+                                AddPostView(showAddPostSheet: $showAddPostSheet)
+                            }
                         Image(systemName: "heart")
                             .resizable()
                             .frame(width: 25.0, height: 25.0)
-                            .padding(.horizontal, 15.0)
+                            .padding(.horizontal, 5.0)
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                         Image(systemName: "message")
-                        //                        .onTapGesture {
-                        //
-                        //                        }
                             .resizable()
                             .frame(width: 25.0, height: 25.0)
-                            .padding(.horizontal, 15.0)
+                            .padding(.horizontal, 5.0)
+                            .padding(.trailing, 15)
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                     }
                     .foregroundColor(Color.white)

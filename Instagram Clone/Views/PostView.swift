@@ -28,6 +28,7 @@ struct PostView: View {
                 Image(uiImage: UIImage(imageLiteralResourceName: post.url))
                     .resizable()
                     .frame(width: geometry.size.width, height: geometry.size.width)
+                    .scaledToFill()
                 HStack {
                     Group {
                         Image(systemName: "heart")

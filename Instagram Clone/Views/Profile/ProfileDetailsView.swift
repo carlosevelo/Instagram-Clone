@@ -41,8 +41,8 @@ struct ProfileDetailsView: View {
                 .padding()
                 
                 VStack(alignment: .leading) {
-                    Text(profileViewModel.currentUser?.fullName ?? "Unknown")
-                    Text(profileViewModel.currentUser?.bio ?? "")
+                    Text(profileViewModel.data.name)
+                    Text(profileViewModel.data.bio)
                 }
                 .padding()
                 .frame(width: geo.size.width, alignment: .leading)
@@ -54,7 +54,7 @@ struct ProfileDetailsView: View {
                         showEditSheet.toggle()
                     }
                     .sheet(isPresented: $showEditSheet) {
-                        EditProfileSheetView()
+                        EditProfileView(showEditSheet: $showEditSheet)
                     }
                     Spacer()
                     Button("Share Profile") {

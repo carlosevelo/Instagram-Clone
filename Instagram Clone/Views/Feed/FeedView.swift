@@ -15,9 +15,16 @@ struct FeedView: View {
             VStack (spacing: 0){
                 FeedHeaderView()
                 Divider()
-                ScrollView {
-                    ForEach(viewModel.feed, id: \.postId) { post in
-                        PostView(post: post)
+                if viewModel.feed.isEmpty {
+                    Spacer()
+                    Text("No Posts to View")
+                        .foregroundColor(.gray)
+                    Spacer()
+                } else {
+                    ScrollView {
+                        ForEach(viewModel.feed, id: \.postId) { post in
+                            PostView(post: post)
+                        }
                     }
                 }
             }
