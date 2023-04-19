@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileDetailsView: View {
     @EnvironmentObject var profileViewModel: ProfileViewModel
+    @EnvironmentObject var profileData: ProfileDataModel
     @State var showEditSheet = false
     @State var showAlert = false
     
@@ -41,8 +42,8 @@ struct ProfileDetailsView: View {
                 .padding()
                 
                 VStack(alignment: .leading) {
-                    Text(profileViewModel.data.name)
-                    Text(profileViewModel.data.bio)
+                    Text(profileData.name)
+                    Text(profileData.bio)
                 }
                 .padding()
                 .frame(width: geo.size.width, alignment: .leading)

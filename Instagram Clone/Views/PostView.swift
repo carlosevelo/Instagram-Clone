@@ -25,10 +25,20 @@ struct PostView: View {
                     Image(systemName: "ellipsis")
                 }
                 .padding([.leading, .trailing])
-                Image(uiImage: UIImage(imageLiteralResourceName: post.url))
-                    .resizable()
-                    .frame(width: geometry.size.width, height: geometry.size.width)
-                    .scaledToFill()
+                
+                if let data = post.imageData, let uiImage = UIImage(data: data) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .frame(width: geometry.size.width, height: geometry.size.width)
+                        .scaledToFill()
+                }
+                else {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .resizable()
+                        .frame(width: geometry.size.width, height: geometry.size.width)
+                        .scaledToFill()
+                }
+                
                 HStack {
                     Group {
                         Image(systemName: "heart")
@@ -82,6 +92,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(userId: 1, caption: "caption", date: Date(), url: "post"))
+        PostView(post: Post(userId: "1", caption: "caption", date: Date(), url: "post"))
     }
 }

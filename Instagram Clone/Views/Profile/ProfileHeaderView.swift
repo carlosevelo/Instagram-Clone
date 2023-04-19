@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @EnvironmentObject var authService: AuthService
+    @EnvironmentObject var profileData: ProfileDataModel
     @ObservedObject var profileViewModel = ProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
     @State var showAddPostSheet = false
@@ -21,7 +22,7 @@ struct ProfileHeaderView: View {
                 VStack {
                     Spacer()
                     HStack(alignment: .center) {
-                        Text("\(profileViewModel.data.username)")
+                        Text("\(profileData.username)")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             .font(.title)
                             .fontWeight(.bold)
@@ -37,7 +38,7 @@ struct ProfileHeaderView: View {
                                 showAddPostSheet.toggle()
                             }
                             .sheet(isPresented: $showAddPostSheet) {
-                                AddPostView(showAddPostSheet: $showAddPostSheet)
+                                AddPostView(addPostViewModel: AddPostViewModel(), showAddPostSheet: $showAddPostSheet)
                             }
                         Button {
                             authService.SignOut()

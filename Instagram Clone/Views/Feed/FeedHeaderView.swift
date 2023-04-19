@@ -11,6 +11,7 @@ struct FeedHeaderView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @State var showAddPostSheet = false
+    @StateObject var addPostViewModel = AddPostViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -36,7 +37,7 @@ struct FeedHeaderView: View {
                                 showAddPostSheet.toggle()
                             }
                             .sheet(isPresented: $showAddPostSheet) {
-                                AddPostView(showAddPostSheet: $showAddPostSheet)
+                                AddPostView(addPostViewModel: addPostViewModel, showAddPostSheet: $showAddPostSheet)
                             }
                         Image(systemName: "heart")
                             .resizable()

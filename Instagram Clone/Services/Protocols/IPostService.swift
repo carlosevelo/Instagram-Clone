@@ -9,15 +9,15 @@ import Foundation
 
 protocol IPostService {
     //MARK: - Create Methods
-    func CreatePost(userId: Int, caption: String, date: Date)
+    func CreatePost(imageData: Data, caption: String)
     
     //MARK: - Get Methods
     func GetPostByPostId(postId: Int) -> Post
-    func GetPostListByUserId(userId: String) -> [Post]
-    func GetFeedByUserId(userId: Int) -> [Post]
+    func GetPostListByUserId(userId: String, onComplete: @escaping ([Post]) -> Void)
+    func GetFeedByUserId(userId: String, onComplete: @escaping ([Post]) -> Void)
     
     //MARK: - Update Methods
-    func UpdatePost(postId: Int, userId: Int, caption: String, date: Date)
+    func UpdatePost(postId: Int, userId: String, caption: String, date: Date)
     
     //MARK: - Delete Methods
     func DeletePost(postId: Int)

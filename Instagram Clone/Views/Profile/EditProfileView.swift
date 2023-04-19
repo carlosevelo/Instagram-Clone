@@ -10,7 +10,7 @@ import PhotosUI
 
 struct EditProfileView: View {
     @EnvironmentObject var profileViewModel: ProfileViewModel
-    
+    @EnvironmentObject var profileData: ProfileDataModel
     @Binding var showEditSheet: Bool
     @State var selectedItem: [PhotosPickerItem] = []
     @State var data: Data?
@@ -53,17 +53,17 @@ struct EditProfileView: View {
                     }
                     .frame(width: geo.size.width * 0.3, height: geo.size.height)
                     VStack(alignment: .leading, spacing: 0) {
-                        TextField("Name", text: $profileViewModel.data.name)
+                        TextField("Name", text: $profileData.name)
                             .padding(.horizontal)
                             .frame(height: 40)
                             .lineLimit(1)
                         Divider()
-                        TextField("Username", text: $profileViewModel.data.username)
+                        TextField("Username", text: $profileData.username)
                             .padding(.horizontal)
                             .frame(height: 40)
                             .lineLimit(1)
                         Divider()
-                        TextField("Bio", text: $profileViewModel.data.bio, axis: .vertical)
+                        TextField("Bio", text: $profileData.bio, axis: .vertical)
                             .padding(.horizontal)
                             .padding(.vertical, 6)
                             .frame(minHeight: 40)

@@ -11,9 +11,7 @@ import FirebaseAuth
 
 class ProfileViewModel: ObservableObject {
     var userService = UserService()
-    
-    @Published var data = ProfileDataModel()
-    
+        
     func SaveProfile() {
         //TODO: Save to firebase
     }

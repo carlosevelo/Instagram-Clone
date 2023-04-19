@@ -22,7 +22,10 @@ class ProfileDataModel : ObservableObject {
         if let currentUser = Auth.auth().currentUser {
             //TODO: Get profile data from Firebase
         
-            let userPosts = postService.GetPostListByUserId(userId: currentUser.uid)
+            var userPosts: [Post] = []
+            postService.GetPostListByUserId(userId: currentUser.uid) { posts in
+                userPosts = posts
+            }
             var itemList: [Item] = []
             for post in userPosts {
                 itemList.append(Item(post: post))

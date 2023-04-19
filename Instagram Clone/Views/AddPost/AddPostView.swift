@@ -9,60 +9,43 @@ import SwiftUI
 import PhotosUI
 
 struct AddPostView: View {
-    @ObservedObject var addPostViewModel = AddPostViewModel()
+    @StateObject var addPostViewModel: AddPostViewModel
 
-    @State var selectedItem: [PhotosPickerItem] = []
     @Binding var showAddPostSheet: Bool
     @State var showPhotosPicker = false
-    @State var data: Data?
-    @State var image: Image?
-    @State var caption: String = ""
     
     var body: some View {
         VStack {
-            AddPostHeader(showAddPostSheet: $showAddPostSheet)
-                .environmentObject(addPostViewModel)
+            AddPostHeader(addPostViewModel: addPostViewModel, showAddPostSheet: $showAddPostSheet)
             Divider()
             GeometryReader { geo in
                 HStack(spacing: 0) {
                     Group {
-                        PhotosPicker(
-                            selection: $selectedItem,
-                            maxSelectionCount: 1,
-                            matching: .images,
-                            photoLibrary: .shared()
-                        ) {
-                            if let image = UIImage(data: $addPostViewModel.image.wrappedValue) {
+                        switch addPostViewModel.imageState {
+                            case .success(let image):
                                 Image(uiImage: image)
                                     .resizable()
-                                    .frame(width: 60, height: 60)
-                            }
-                            else {
+                            case .empty:
                                 Image(systemName: "photo")
                                     .resizable()
-                                    .frame(width: 60, height: 60)
-                            }
+                            case .failure:
+                                Image(systemName: "exclamationmark.triangle.fill")
+                                    .resizable()
                         }
-                        .onChange(of: selectedItem) { newValue in
-                             guard let item = selectedItem.first else {
-                                 return
-                             }
-                            
-                            item.loadTransferable(type: Data.self) { result in
-                                switch result {
-                                case.success(let data):
-                                    if let data = data {
-                                        self.addPostViewModel.image = data
-                                    } else {
-                                        print("Data is nil.")
-                                    }
-                                case.failure(let failure):
-                                    fatalError("\(failure)")
-                                }
-                            }
-                        }
-                        
                     }
+                    .opacity(0.75)
+                    .overlay(alignment: .bottomTrailing) {
+                        PhotosPicker(selection: $addPostViewModel.imageSelection,
+                                     matching: .images,
+                                     photoLibrary: .shared()) {
+                            Image(systemName: "pencil.circle.fill")
+                                .symbolRenderingMode(.multicolor)
+                                .font(.system(size: 20))
+                                .foregroundColor(.accentColor)
+                        }
+                        .buttonStyle(.borderless)
+                    }
+                    .frame(width: 60, height: 60)
                     .padding()
                     .frame(width: geo.size.width * 0.2, height: geo.size.height)
                     
@@ -103,10 +86,54 @@ struct AddPostView: View {
     }
 }
 
+struct AddPostHeader: View {
+    var addPostViewModel: AddPostViewModel
+    @Binding var showAddPostSheet: Bool
+    
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Rectangle()
+                    .foregroundColor(Color(UIColor.systemBackground))
+                HStack(alignment: .center) {
+                    Button {
+                        showAddPostSheet.toggle()
+                    } label: {
+                        Text("Cancel")
+                            .fontWeight(.bold)
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.leading)
+                    .frame(width: geometry.size.width * 0.25)
+                    
+                    Text("New Post")
+                        .foregroundColor(.black)
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 15.0)
+                        .frame(width: geometry.size.width * 0.50)
+                    
+                    Button {
+                        addPostViewModel.sharePost()
+                        showAddPostSheet.toggle()
+                    } label: {
+                        Text("Share")
+                            .fontWeight(.bold)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.trailing)
+                    .frame(width: geometry.size.width * 0.25)
+                }
+                .foregroundColor(Color.white)
+                .padding(.bottom, 5)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .frame(height: 50)
+    }
+}
+
 //struct AddMediaView_Previews: PreviewProvider {
-//    @Binding var showAddPostSheet: Bool = false
-//
 //    static var previews: some View {
-//        AddPostView(showAddPostSheet: $showAddPostSheet)
+//        AddPostView()
 //    }
 //}

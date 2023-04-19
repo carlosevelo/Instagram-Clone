@@ -17,7 +17,7 @@ struct ProfileView: View {
                 Divider()
                 ScrollView {
                     ProfileDetailsView()
-                    PostGridView().environmentObject(ProfileDataModel())
+                    PostGridView()
                 }
             }
             .environmentObject(viewModel)

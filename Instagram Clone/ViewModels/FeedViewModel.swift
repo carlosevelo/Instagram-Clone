@@ -6,11 +6,21 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class FeedViewModel: ObservableObject {
     
-    var feed: [Post] {
-        return []
-        //DummyData.GetFeed()
+    var postService = PostService()
+    
+    @Published var feed: [Post] = []
+    
+    init() {
+        if let userId = Auth.auth().currentUser?.uid {
+            postService.GetFeedByUserId(userId: userId) { posts in
+                print("FeedVM: Received: \(posts.count)")
+                print("\(posts.first?.imageData?.count ?? 0)")
+                self.feed = posts
+            }
+        }
     }
 }
