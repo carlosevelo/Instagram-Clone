@@ -24,9 +24,24 @@ class AuthService : ObservableObject {
             }
             guard let user = authData?.user else {return}
             UserDefaults.standard.set(user.uid, forKey: "uid")
+            
             self.signedIn = true
             
-            self.userService.CreateUser(uid: user.uid, email: email, username: username, name: fullName, profileImage: "", bio: "")
+            let newUser = self.userService.CreateUser(uid: user.uid, email: email, username: username, name: fullName, profileImageUrl: "", bio: "")
+            
+            do {
+                // Create JSON Encoder
+                let encoder = JSONEncoder()
+
+                // Encode Note
+                let data = try encoder.encode(newUser)
+
+                // Write/Set Data
+                UserDefaults.standard.set(data, forKey: "currentUser")
+
+            } catch {
+                print("Unable to Encode currentUser (\(error))")
+            }
         }
     }
     
@@ -37,8 +52,28 @@ class AuthService : ObservableObject {
             }
             guard let user = result?.user else {return}
             UserDefaults.standard.set(user.uid, forKey: "userId")
-            self.signedIn = true
-            print("Signed in.")
+            
+            var currentUser: User?
+            self.userService.GetUserByUserId(userId: user.uid) { user in
+                currentUser = user
+                
+                do {
+                    // Create JSON Encoder
+                    let encoder = JSONEncoder()
+
+                    // Encode Note
+                    let data = try encoder.encode(currentUser)
+
+                    // Write/Set Data
+                    UserDefaults.standard.set(data, forKey: "currentUser")
+
+                } catch {
+                    print("Unable to Encode user (\(error))")
+                }
+
+                self.signedIn = true
+                print("Signed in.")
+            }
         }
     }
     
@@ -46,6 +81,7 @@ class AuthService : ObservableObject {
         do {
             try Auth.auth().signOut()
             self.signedIn = false
+            UserDefaults.standard.removeObject(forKey: "currentUser")
             print("Signed out.")
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)

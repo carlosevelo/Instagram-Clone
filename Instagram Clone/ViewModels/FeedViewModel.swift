@@ -18,7 +18,7 @@ class FeedViewModel: ObservableObject {
         if let userId = Auth.auth().currentUser?.uid {
             postService.GetFeedByUserId(userId: userId) { posts in
                 print("FeedVM: Received: \(posts.count)")
-                print("\(posts.first?.imageData?.count ?? 0)")
+                print(posts.first?.user ?? "Nothing")
                 self.feed = posts
             }
         }

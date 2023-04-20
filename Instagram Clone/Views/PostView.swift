@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct PostView: View {
     var post: Post
@@ -17,27 +18,18 @@ struct PostView: View {
                     Image(systemName: "person")
                         .resizable()
                         .frame(width: 35, height: 35)
-//                    Image(uiImage: UIImage(imageLiteralResourceName: post.user?.profileImageUrl ?? "default"))
-//                        .resizable()
-//                        .frame(width: 35, height: 35)
                     Text(post.user?.username ?? "No Username")
                     Spacer()
                     Image(systemName: "ellipsis")
                 }
                 .padding([.leading, .trailing])
                 
-                if let data = post.imageData, let uiImage = UIImage(data: data) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .frame(width: geometry.size.width, height: geometry.size.width)
-                        .scaledToFill()
+                AsyncImage(url: post.url) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
                 }
-                else {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .resizable()
-                        .frame(width: geometry.size.width, height: geometry.size.width)
-                        .scaledToFill()
-                }
+                .frame(width: geometry.size.width, height: geometry.size.width)
                 
                 HStack {
                     Group {
@@ -92,6 +84,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView(post: Post(userId: "1", caption: "caption", date: Date(), url: "post"))
+        PostView(post: Post(userId: "1", caption: "caption", date: Date(), url: URL(string: "https://firebasestorage.googleapis.com/v0/b/instagram-clone-93149.appspot.com/o/posts%2FDa0fxnRxHffxGtnSH05EtJl95lZ2%2F89BB5362-D345-49D1-9BA9-6AEBCBC9AEA6.jpeg?alt=media&token=78c4885b-a9bb-4fb7-9931-f972bd19008c")))
     }
 }

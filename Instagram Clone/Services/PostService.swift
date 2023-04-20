@@ -11,6 +11,9 @@ import FirebaseStorage
 import FirebaseFirestoreSwift
 
 class PostService: IPostService {
+    
+    var userService = UserService()
+    
     let db = Firestore.firestore()
     let storageRef = Storage.storage().reference().child("posts")
     let currentUserId = Auth.auth().currentUser?.uid ?? "0"
@@ -24,10 +27,13 @@ class PostService: IPostService {
                   // Uh-oh, an error occurred!
                   return
                 }
-                let newPost = Post(userId: self.currentUserId, caption: caption, date: Date(), url: downloadURL.lastPathComponent)
                 
+                //Create new Post object
+                let newPost = Post(user: self.userService.GetCurrentUser(), caption: caption, date: Date(), url: downloadURL)
+                
+                //Store object in Firebase
                 do {
-                    try self.db.collection("post").document("/\(newPost.userId)/\(newPost.postId)").setData(from: newPost)
+                    try self.db.collection("post").document().setData(from: newPost)
                 } catch let error {
                     print("Error writing Post to Firestore: \(error)")
                 }
@@ -48,32 +54,15 @@ class PostService: IPostService {
                     var post: Post
                     do {
                         post = try document.data(as: Post.self)
-                        self.setImageData(for: post) { updatedPost in
-                            print("Data being set: \(updatedPost.imageData?.count ?? 0)")
-                            post = updatedPost
-                        }
-                        print("\(post.imageData?.count ?? 0)")
                     } catch {
                         print("Error")
                         continue
                     }
                     postList.append(post)
                 }
+                print("Received \(postList.count) posts")
                 onComplete(postList)
             }
-        }
-    }
-    
-    func setImageData(for post: Post, onComplete: @escaping (Post) -> Void) {
-        storageRef.child("/\(self.currentUserId)/\(post.url)").getData(maxSize: 1 * 2048 * 2048) { data, error in
-            if let error = error {
-                print(error)
-              } else {
-                  print("Data to set: \(data?.count ?? 0)")
-                  var updatedPost = post
-                  updatedPost.imageData = data
-                  onComplete(updatedPost)
-              }
         }
     }
     

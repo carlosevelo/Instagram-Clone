@@ -12,7 +12,7 @@ protocol IUserService {
     func CreateUser(username: String, name: String, bio: String)
     
     //MARK: - Get Methods
-    func GetUserByUserId(userId: Int) -> User
+    func GetUserByUserId(userId: Int, onComplete: @escaping (User) -> Void)
     func GetUserByPostId(postId: Int) -> User
     func GetFollowerIdListByUserId(userId: Int) -> [Int]
     func GetFollowingCountByUserId(userId: Int) -> Int

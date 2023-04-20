@@ -11,17 +11,29 @@ struct User: Codable {
     
     //MARK: - Properties
     
-    var uid: Int
+    var userId: String
     var email: String
     var username: String
     var fullName: String
     var profileImageUrl: String
     var bio: String
     
+    
+    //MARK: - Coding Keys
+    
+    enum CodingKeys: String, CodingKey {
+            case userId
+            case email
+            case username
+            case fullName
+            case profileImageUrl
+            case bio
+        }
+    
     //MARK: - Initialization
     
-    init(uid: Int, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
-        self.uid = uid
+    init(userId: String, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
+        self.userId = userId
         self.email = email
         self.profileImageUrl = profileImageUrl
         self.username = username

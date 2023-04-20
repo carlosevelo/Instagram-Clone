@@ -6,16 +6,72 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 class UserService {
+    
+    let db = Firestore.firestore()
+
     //MARK: - Create
-    func CreateUser(uid: String, email: String, username: String, name: String, profileImage: String, bio: String) {
+    func CreateUser(uid: String, email: String, username: String, name: String, profileImageUrl: String, bio: String) -> User {
+        let user = User(userId: uid, email: email, profileImageUrl: profileImageUrl, username: username, fullName: name, bio: bio)
         
+        do {
+            try self.db.collection("user").document().setData(from: user)
+        } catch let error {
+            print("Error writing User to Firestore: \(error)")
+        }
+        
+        return user
     }
     
     //MARK: - Get
-    func GetUserByUserId(userId: Int) -> User {
-        return DummyData.dummyUser
+    func GetCurrentUser() -> User? {
+        if let data = UserDefaults.standard.data(forKey: "currentUser") {
+            
+            var user: User?
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Decode Note
+                user = try decoder.decode(User.self, from: data)
+
+            } catch {
+                print("Unable to Decode User (\(error))")
+            }
+            
+            if user == nil {
+                print("Error: User is nil.")
+                return nil
+            } else {
+                return user!
+            }
+        }
+        return nil
+    }
+    
+    func GetUserByUserId(userId: String, onComplete: @escaping (User) -> Void) {
+        var userList: [User] = []
+        db.collection("user").whereField("userId", isEqualTo: userId).getDocuments { querySnapshot, err in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    var user: User
+                    do {
+                        user = try document.data(as: User.self)
+                    } catch {
+                        print("Error")
+                        continue
+                    }
+                    userList.append(user)
+                }
+                onComplete(userList.first!)
+            }
+        }
     }
     
     func GetUserByUid(uid: String) -> User {
@@ -26,21 +82,21 @@ class UserService {
         return DummyData.dummyUser
     }
     
-    func GetFollowerIdListByUserId(userId: Int) -> [Int] {
-        return [DummyData.dummyUser.uid]
+    func GetFollowerIdListByUserId(userId: String) -> [String] {
+        return [DummyData.dummyUser.userId]
     }
     
-    func GetFollowingCountByUserId(userId: Int) -> Int {
-        return 0
+    func GetFollowingCountByUserId(userId: String) -> String {
+        return "0"
     }
     
     //MARK: - Update
-    func UpdateUser(userId: Int, username: String, name: String, bio: String) {
+    func UpdateUser(userId: String, username: String, name: String, bio: String) {
         
     }
     
     //MARK: - Delete
-    func DeleteUser(userId: Int) {
+    func DeleteUser(userId: String) {
         
     }
     

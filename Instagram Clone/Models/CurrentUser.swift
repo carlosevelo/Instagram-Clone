@@ -7,6 +7,6 @@
 
 import Foundation
 
-class CurrentUser {
+struct CurrentUser {
     public var user: User?  = nil
 }
