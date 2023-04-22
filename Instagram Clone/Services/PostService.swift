@@ -1,8 +1,8 @@
 //
-//  FeedService.swift
+//  PostService.swift
 //  Instagram Clone
 //
-//  Created by Carlos Evelo on 2/27/23.
+//  Created by Carlos Evelo on 4/22/23.
 //
 
 import Foundation
@@ -10,8 +10,7 @@ import Firebase
 import FirebaseStorage
 import FirebaseFirestoreSwift
 
-class PostService: IPostService {
-    
+class PostService {
     var userService = UserService()
     
     let db = Firestore.firestore()
@@ -44,26 +43,57 @@ class PostService: IPostService {
         return DummyData.dummyPost
     }
     
+    func SetPostListener(userId: String, onComplete: @escaping ([Post]) -> Void) {
+        var postList: [Post] = []
+        db.collection("post").whereField("userId", isEqualTo: userId).addSnapshotListener() { snapshot, error in
+            guard let documents = snapshot?.documentChanges else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            print("Received \(documents.count) document changes")
+            for document in documents {
+                var post: Post
+                do {
+                    post = try document.document.data(as: Post.self)
+                } catch {
+                    print("Error")
+                    continue
+                }
+                postList.append(post)
+            }
+            postList.sort { post1, post2 in
+                post1.date > post2.date
+            }
+            onComplete(postList)
+        }
+    }
+    
     func GetPostListByUserId(userId: String, onComplete: @escaping ([Post]) -> Void) {
         var postList: [Post] = []
-        db.collection("post").whereField("userId", isEqualTo: userId).getDocuments() { querySnapshot, err in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    var post: Post
-                    do {
-                        post = try document.data(as: Post.self)
-                    } catch {
-                        print("Error")
-                        continue
-                    }
-                    postList.append(post)
-                }
-                print("Received \(postList.count) posts")
-                onComplete(postList)
+        db.collection("post").whereField("userId", isEqualTo: userId).getDocuments() { snapshot, error in
+            guard let documents = snapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
             }
+            for document in documents {
+                var post: Post
+                do {
+                    post = try document.data(as: Post.self)
+                } catch {
+                    print("Error")
+                    continue
+                }
+                postList.append(post)
+            }
+            postList.sort { post1, post2 in
+                post1.date > post2.date
+            }
+            onComplete(postList)
         }
+    }
+    
+    func SetFeedListener(userId: String, onComplete: @escaping ([Post]) -> Void) {
+        return SetPostListener(userId: userId, onComplete: onComplete)
     }
     
     func GetFeedByUserId(userId: String, onComplete: @escaping ([Post]) -> Void) {
@@ -77,5 +107,4 @@ class PostService: IPostService {
     func DeletePost(postId: Int) {
         
     }
-    
 }

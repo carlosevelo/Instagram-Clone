@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CommentService: ICommentService {
+class CommentService {
     
     func CreateComment(postId: Int, userId: String, text: Date) {
         

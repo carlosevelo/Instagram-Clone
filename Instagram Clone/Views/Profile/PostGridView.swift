@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct PostGridView: View {
-    @EnvironmentObject var profileData: ProfileDataModel
-
+    //@EnvironmentObject var profileData: ProfileDataModel
+    @StateObject var profileViewModel: ProfileViewModel
+    
     private static let initialColumns = 3.0
     
     @State private var gridColumns = Array(repeating: GridItem(.flexible()), count: Int(initialColumns))
@@ -18,7 +19,7 @@ struct PostGridView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: gridColumns) {
-                    ForEach(profileData.items) { item in
+                    ForEach(profileViewModel.profileData.items) { item in
                         GeometryReader { geo in
                             NavigationLink(destination: PostView(post: item.post)) {
                                 GridItemView(item: item, size: Double(geo.size.width))
@@ -38,6 +39,6 @@ struct PostGridView: View {
 
 struct PostGridView_Previews: PreviewProvider {
     static var previews: some View {
-        PostGridView().environmentObject(ProfileDataModel())
+        PostGridView(profileViewModel: ProfileViewModel())
     }
 }

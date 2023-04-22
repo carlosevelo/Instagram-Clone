@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StoryService: IStoryService {
+class StoryService {
     func CreateStory(userId: String, date: Date) {
         
     }

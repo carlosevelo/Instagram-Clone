@@ -13,7 +13,7 @@ struct FeedView: View {
     var body: some View {
         GeometryReader { geo in
             VStack (spacing: 0){
-                FeedHeaderView()
+                FeedHeaderView(feedViewModel: viewModel)
                 Divider()
                 if viewModel.feed.isEmpty {
                     Spacer()
@@ -25,6 +25,9 @@ struct FeedView: View {
                         ForEach(viewModel.feed, id: \.postId) { post in
                             PostView(post: post)
                         }
+                    }
+                    .refreshable {
+                        viewModel.RefreshPosts()
                     }
                 }
             }

@@ -10,13 +10,14 @@ import PhotosUI
 
 struct AddPostView: View {
     @StateObject var addPostViewModel: AddPostViewModel
+    @Binding var newPost: Bool
 
     @Binding var showAddPostSheet: Bool
     @State var showPhotosPicker = false
     
     var body: some View {
         VStack {
-            AddPostHeader(addPostViewModel: addPostViewModel, showAddPostSheet: $showAddPostSheet)
+            AddPostHeader(addPostViewModel: addPostViewModel, newPost: $newPost, showAddPostSheet: $showAddPostSheet)
             Divider()
             GeometryReader { geo in
                 HStack(spacing: 0) {
@@ -83,52 +84,6 @@ struct AddPostView: View {
         }
         
         
-    }
-}
-
-struct AddPostHeader: View {
-    var addPostViewModel: AddPostViewModel
-    @Binding var showAddPostSheet: Bool
-    
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Rectangle()
-                    .foregroundColor(Color(UIColor.systemBackground))
-                HStack(alignment: .center) {
-                    Button {
-                        showAddPostSheet.toggle()
-                    } label: {
-                        Text("Cancel")
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
-                    }
-                    .padding(.leading)
-                    .frame(width: geometry.size.width * 0.25)
-                    
-                    Text("New Post")
-                        .foregroundColor(.black)
-                        .fontWeight(.bold)
-                        .padding(.horizontal, 15.0)
-                        .frame(width: geometry.size.width * 0.50)
-                    
-                    Button {
-                        addPostViewModel.sharePost()
-                        showAddPostSheet.toggle()
-                    } label: {
-                        Text("Share")
-                            .fontWeight(.bold)
-                            .foregroundColor(.blue)
-                    }
-                    .padding(.trailing)
-                    .frame(width: geometry.size.width * 0.25)
-                }
-                .foregroundColor(Color.white)
-                .padding(.bottom, 5)
-            }
-            .frame(width: geometry.size.width, height: geometry.size.height)
-        }
-        .frame(height: 50)
     }
 }
 

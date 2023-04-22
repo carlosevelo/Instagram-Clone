@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @EnvironmentObject var authService: AuthService
-    @EnvironmentObject var profileData: ProfileDataModel
-    @ObservedObject var profileViewModel = ProfileViewModel()
     @Environment(\.colorScheme) var colorScheme
+
+    @EnvironmentObject var authService: AuthService
+    @StateObject var profileViewModel: ProfileViewModel
+    @StateObject var addPostViewModel = AddPostViewModel()
+    
     @State var showAddPostSheet = false
+    @State var newPost: Bool
     
     var body: some View {
         GeometryReader { geometry in
@@ -22,7 +25,7 @@ struct ProfileHeaderView: View {
                 VStack {
                     Spacer()
                     HStack(alignment: .center) {
-                        Text("\(profileData.username)")
+                        Text("\(profileViewModel.profileData.username)")
                             .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             .font(.title)
                             .fontWeight(.bold)
@@ -38,7 +41,7 @@ struct ProfileHeaderView: View {
                                 showAddPostSheet.toggle()
                             }
                             .sheet(isPresented: $showAddPostSheet) {
-                                AddPostView(addPostViewModel: AddPostViewModel(), showAddPostSheet: $showAddPostSheet)
+                                AddPostView(addPostViewModel: addPostViewModel, newPost: $newPost, showAddPostSheet: $showAddPostSheet)
                             }
                         Button {
                             authService.SignOut()
@@ -62,6 +65,6 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView()
+        ProfileHeaderView(profileViewModel: ProfileViewModel(), newPost: false)
     }
 }

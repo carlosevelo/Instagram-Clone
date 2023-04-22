@@ -10,17 +10,30 @@ import FirebaseAuth
 
 class FeedViewModel: ObservableObject {
     
+    let currentUserID = "IDoi8a1hG9cIdW8OwvZ4V2Xx0JF3"
     var postService = PostService()
     
     @Published var feed: [Post] = []
     
     init() {
-        if let userId = Auth.auth().currentUser?.uid {
-            postService.GetFeedByUserId(userId: userId) { posts in
-                print("FeedVM: Received: \(posts.count)")
-                print(posts.first?.user ?? "Nothing")
-                self.feed = posts
-            }
+        SetFeedListener()
+    }
+    
+    func SetFeedListener() {
+        postService.SetFeedListener(userId: currentUserID) { posts in
+            print("Listening...")
+            print("Before: \(self.feed.count)")
+            print("After: \(posts.count)")
+            self.feed = posts
+        }
+    }
+    
+    func RefreshPosts() {
+        postService.GetPostListByUserId(userId: currentUserID) { posts in
+            print("Refreshing feed...")
+            print("Before: \(self.feed.count)")
+            print("After: \(posts.count)")
+            self.feed = posts
         }
     }
 }

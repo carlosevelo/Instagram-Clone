@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ChatService: IChatService {
+class ChatService {
     func CreateChat(userId: String, recipientId: Int, messages: [Message]) {
         
     }

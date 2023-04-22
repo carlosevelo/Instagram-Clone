@@ -48,4 +48,5 @@ struct Post : Codable {
         self.date = date
         self.url = url
     }
+
 }

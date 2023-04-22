@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct FeedHeaderView: View {
-    
     @Environment(\.colorScheme) var colorScheme
-    @State var showAddPostSheet = false
+    
+    @StateObject var feedViewModel: FeedViewModel
     @StateObject var addPostViewModel = AddPostViewModel()
+    
+    @State var showAddPostSheet = false
+    @State var newPost = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,7 +40,7 @@ struct FeedHeaderView: View {
                                 showAddPostSheet.toggle()
                             }
                             .sheet(isPresented: $showAddPostSheet) {
-                                AddPostView(addPostViewModel: addPostViewModel, showAddPostSheet: $showAddPostSheet)
+                                AddPostView(addPostViewModel: addPostViewModel, newPost: $newPost, showAddPostSheet: $showAddPostSheet)
                             }
                         Image(systemName: "heart")
                             .resizable()
@@ -63,6 +66,6 @@ struct FeedHeaderView: View {
 
 struct HomeHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedHeaderView()
+        FeedHeaderView(feedViewModel: FeedViewModel())
     }
 }

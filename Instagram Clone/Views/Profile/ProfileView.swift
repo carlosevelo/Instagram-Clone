@@ -9,15 +9,20 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
+    //@EnvironmentObject var profileData: ProfileDataModel
+    @State var newPost = false
     
     var body: some View {
         GeometryReader { geo in
             VStack (spacing: 0) {
-                ProfileHeaderView()
+                ProfileHeaderView(profileViewModel: viewModel, newPost: newPost)
                 Divider()
                 ScrollView {
-                    ProfileDetailsView()
-                    PostGridView()
+                    ProfileDetailsView(profileViewModel: viewModel)
+                    PostGridView(profileViewModel: viewModel)
+                }
+                .refreshable {
+                    viewModel.RefreshPosts()
                 }
             }
             .environmentObject(viewModel)

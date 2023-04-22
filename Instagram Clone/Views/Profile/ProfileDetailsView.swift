@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfileDetailsView: View {
-    @EnvironmentObject var profileViewModel: ProfileViewModel
-    @EnvironmentObject var profileData: ProfileDataModel
+    @StateObject var profileViewModel: ProfileViewModel
+    //@EnvironmentObject var profileData: ProfileDataModel
     @State var showEditSheet = false
     @State var showAlert = false
     
@@ -42,8 +42,8 @@ struct ProfileDetailsView: View {
                 .padding()
                 
                 VStack(alignment: .leading) {
-                    Text(profileData.name)
-                    Text(profileData.bio)
+                    Text(profileViewModel.profileData.name)
+                    Text(profileViewModel.profileData.bio)
                 }
                 .padding()
                 .frame(width: geo.size.width, alignment: .leading)
@@ -77,7 +77,6 @@ struct ProfileDetailsView: View {
 
 struct ProfileDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileDetailsView()
-            .environmentObject(ProfileViewModel())
+        ProfileDetailsView(profileViewModel: ProfileViewModel())
     }
 }
