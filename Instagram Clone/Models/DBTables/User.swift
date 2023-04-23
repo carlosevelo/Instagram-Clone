@@ -15,7 +15,7 @@ struct User: Codable {
     var email: String
     var username: String
     var fullName: String
-    var profileImageUrl: String
+    var profileImageUrl: URL?
     var bio: String
     
     
@@ -32,7 +32,7 @@ struct User: Codable {
     
     //MARK: - Initialization
     
-    init(userId: String, email: String, profileImageUrl: String, username: String, fullName: String, bio: String) {
+    init(userId: String, email: String, profileImageUrl: URL?, username: String, fullName: String, bio: String) {
         self.userId = userId
         self.email = email
         self.profileImageUrl = profileImageUrl

@@ -16,9 +16,11 @@ struct Post : Codable {
     var url: URL?
     var caption: String
     var date: Date
+    var likes: Int
+    var comments: [Comment]
     
     //Added properties
-    var user: User?
+    var user: User
     
     //MARK: - Coding Keys
     enum CodingKeys: String, CodingKey {
@@ -28,25 +30,31 @@ struct Post : Codable {
             case url
             case caption
             case date
+            case likes
+            case comments
         }
     
     //MARK: - Initialization
     
-    init(userId: String, caption: String, date: Date, url: URL?) {
-        self.postId = UUID()
-        self.userId = userId
-        self.caption = caption
-        self.date = date
-        self.url = url
-    }
+//    init(userId: String, caption: String, date: Date, url: URL?) {
+//        self.postId = UUID()
+//        self.userId = userId
+//        self.caption = caption
+//        self.date = date
+//        self.url = url
+//        self.likes = 0
+//        self.comments = []
+//    }
     
-    init(user: User?, caption: String, date: Date, url: URL?) {
+    init(user: User, caption: String, date: Date, url: URL?) {
         self.postId = UUID()
-        self.userId = user?.userId ?? "-1"
+        self.userId = user.userId
         self.user = user
         self.caption = caption
         self.date = date
         self.url = url
+        self.likes = 0
+        self.comments = []
     }
 
 }

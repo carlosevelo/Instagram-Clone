@@ -27,7 +27,7 @@ class AuthService : ObservableObject {
             
             self.signedIn = true
             
-            let newUser = self.userService.CreateUser(uid: user.uid, email: email, username: username, name: fullName, profileImageUrl: "", bio: "")
+            let newUser = self.userService.CreateUser(uid: user.uid, email: email, username: username, name: fullName, profileImageUrl: nil, bio: "")
             
             do {
                 // Create JSON Encoder

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Comment {
+struct Comment : Codable {
     
     //MARK: - Properties
     
@@ -15,6 +15,15 @@ struct Comment {
     var postId: Int
     var userId: Int
     var text: String
+    
+    //MARK: - Coding Keys
+    enum CodingKeys: String, CodingKey {
+            case commentId
+            case postId
+            case userId
+            case text
+        }
+    
     
     //MARK: - Initialization
     

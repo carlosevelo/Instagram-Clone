@@ -28,11 +28,11 @@ class PostService {
                 }
                 
                 //Create new Post object
-                let newPost = Post(user: self.userService.GetCurrentUser(), caption: caption, date: Date(), url: downloadURL)
+                let newPost = Post(user: self.userService.GetCurrentUser() ?? DummyData.dummyUser, caption: caption, date: Date(), url: downloadURL)
                 
                 //Store object in Firebase
                 do {
-                    try self.db.collection("post").document().setData(from: newPost)
+                    try self.db.collection("post").document("\(newPost.postId)").setData(from: newPost)
                 } catch let error {
                     print("Error writing Post to Firestore: \(error)")
                 }
@@ -52,14 +52,16 @@ class PostService {
             }
             print("Received \(documents.count) document changes")
             for document in documents {
-                var post: Post
-                do {
-                    post = try document.document.data(as: Post.self)
-                } catch {
-                    print("Error")
-                    continue
+                if document.type != .modified {
+                    var post: Post
+                    do {
+                        post = try document.document.data(as: Post.self)
+                    } catch {
+                        print("Error")
+                        continue
+                    }
+                    postList.append(post)
                 }
-                postList.append(post)
             }
             postList.sort { post1, post2 in
                 post1.date > post2.date
@@ -100,8 +102,18 @@ class PostService {
         return GetPostListByUserId(userId: userId, onComplete: onComplete)
     }
     
-    func UpdatePost(postId: Int, userId: String, caption: String, date: Date) {
-        
+    func UpdatePost(postId: UUID, likes: Int, comments: [Comment]) {
+        db.collection("post").document("\(postId)")
+            .updateData([
+                "likes": likes,
+                "comments": comments
+            ]) { error in
+                if let error = error {
+                        print("Error updating document: \(error)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+            }
     }
     
     func DeletePost(postId: Int) {

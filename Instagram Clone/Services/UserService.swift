@@ -15,7 +15,7 @@ class UserService {
     let db = Firestore.firestore()
 
     //MARK: - Create
-    func CreateUser(uid: String, email: String, username: String, name: String, profileImageUrl: String, bio: String) -> User {
+    func CreateUser(uid: String, email: String, username: String, name: String, profileImageUrl: URL?, bio: String) -> User {
         let user = User(userId: uid, email: email, profileImageUrl: profileImageUrl, username: username, fullName: name, bio: bio)
         
         do {
